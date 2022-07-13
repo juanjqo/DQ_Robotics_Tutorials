@@ -4,32 +4,33 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'What is DQ Robotics?',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        DQ Robotics is a standalone open-source (LGPLv3) library for robot modelling and control. 
+        It provides dual quaternion algebra and kinematic calculation algorithms.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Available in Matlab, C++11 and Python',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Test your ideas fast while having convenient visualization tools using the Matlab version. Use Python 
+        for easy and computationally efficient (C++ code runs under the hood for fast performance) implementations.
+        Use the C++11 version for real-time high-performance applications and if you are not afraid of pointers.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Requirements',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        We offer official support on a voluntary basis for active Ubuntu LTS versions. However, builds
+        are available for Windows and MacOS as well.
       </>
     ),
   },

@@ -57,7 +57,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Home',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -67,12 +67,12 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Tutorials',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://dqrobotics.github.io/',
+            label: 'Official DQ Robotics Site',
             position: 'right',
           },
         ],
@@ -84,25 +84,25 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Tutorials',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Developers',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Team',
+                href: 'https://github.com/orgs/dqrobotics/people',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Prof. Bruno Vilhena Adorno, Ph.D.',
+                href: 'https://personalpages.manchester.ac.uk/staff/bruno.adorno/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Prof. Murilo Marques Marinho, Ph.D.',
+                href: 'https://mmmarinho.github.io/',
               },
             ],
           },
@@ -115,12 +115,16 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/dqrobotics',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()}. The DQ Robotics software is provided “as is”, 
+        without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, 
+        fitness for a particular purpose and noninfrigement. 
+        
+        DQ robotics is brought to you by Bruno Vilhena Adorno and Murilo Marques Marinho.`,
       },
       prism: {
         theme: lightCodeTheme,
