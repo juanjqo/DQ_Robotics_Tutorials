@@ -30,7 +30,7 @@ const FeatureList = [
     description: (
       <>
         We offer official support on a voluntary basis for active Ubuntu LTS versions. However, builds
-        are available for Windows and MacOS as well.
+        are available for Windows and MacOS (Intel & Apple Silicon) as well.
       </>
     ),
   },
