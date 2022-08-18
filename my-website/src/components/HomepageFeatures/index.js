@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Available in Matlab, C++11 and Python',
+    title: 'Available in Matlab, Python and C++11',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
