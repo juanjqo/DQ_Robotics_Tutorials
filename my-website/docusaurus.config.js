@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/dqrobotics_logo2.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -60,7 +60,7 @@ const config = {
         title: 'Home',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/dqrobotics_logo3.svg',
         },
         items: [
           {
@@ -93,16 +93,16 @@ const config = {
             title: 'Developers',
             items: [
               {
-                label: 'Team',
-                href: 'https://github.com/orgs/dqrobotics/people',
-              },
-              {
                 label: 'Prof. Bruno Vilhena Adorno, Ph.D.',
                 href: 'https://personalpages.manchester.ac.uk/staff/bruno.adorno/',
               },
               {
                 label: 'Prof. Murilo Marques Marinho, Ph.D.',
                 href: 'https://mmmarinho.github.io/',
+              },
+              {
+                label: 'Team',
+                href: 'https://github.com/orgs/dqrobotics/people',
               },
             ],
           },
@@ -124,11 +124,14 @@ const config = {
         without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, 
         fitness for a particular purpose and noninfrigement. 
         
-        DQ robotics is brought to you by Bruno Vilhena Adorno and Murilo Marques Marinho.`,
+        Built with Docusaurus.`,
+        
       },
       prism: {
-        theme: lightCodeTheme,
+        //theme: lightCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
+        
       },
     }),
 };

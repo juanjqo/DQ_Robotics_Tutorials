@@ -1,0 +1,202 @@
+---
+sidebar_position: 1
+---
+
+# Getting Started
+
+Let's discover **DQ Robotics**.
+
+## DQ Robotics versions
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs className="unique-tabs">
+
+<TabItem value="py" label="Python">
+
+
+
+:::info Description
+DQ Robotics Python3 is recommended for most users. Use this version for easy and computationally efficient (**C++ code runs under the hood for fast performance**) implementations.
+:::
+
+:::info license
+DQ Robotics Python3 is distributed as a **[LGPLV3](https://choosealicense.com/licenses/lgpl-3.0/)** licensed package. 
+Interface submodules might have additional licenses.
+:::
+
+:::tip System requirements
+Builds are available for **[active Ubuntu LTS versions](https://wiki.ubuntu.com/Releases), Windows, and MacOS**.
+:::
+
+:::caution note
+No support for conda installations, but you might be able to install the wheel file.
+:::
+
+</TabItem>
+<TabItem value="cpp" label="C++">
+
+:::info Description
+The DQ Robotics C++11 is recommended for **real-time high-performance applications** and if you are not afraid of pointers.
+:::
+
+:::info license
+DQ Robotics C++11 is distributed as a **[LGPLV3](https://choosealicense.com/licenses/lgpl-3.0/)** licensed package. 
+Interface submodules might have additional licenses.
+:::
+
+:::tip System requirements
+Builds are available for **[active Ubuntu LTS versions](https://wiki.ubuntu.com/Releases)**.
+:::
+
+:::caution Note
+If terms such as C++11, [CMAKE](https://cmake.org/), PPA, and linking are unfamiliar to you, consider using the Python3 or MATLAB version of DQ Robotics instead.
+:::
+
+</TabItem>
+
+<TabItem value="matlab" label="Matlab">
+
+:::info Description
+
+DQ Robotics Matlab is adequate if you want to test your ideas fast while having convenient visualization tools, 
+provided you have access to the [Mathworks software](https://www.mathworks.com/).
+:::
+
+
+:::info License
+DQ Robotics Matlab is distributed as a **[LGPLV3](https://choosealicense.com/licenses/lgpl-3.0/)** licensed package. Matlab, however, is not free software and other third-party toolboxes may also not be free.
+:::
+
+:::tip System requirements
+A operating system running **[Matlab](https://www.mathworks.com/products/matlab.html)**.
+:::
+
+:::caution Note
+If you want high-performance implementations, consider using the Python or C++ version of DQ Robotics.
+:::
+
+</TabItem>
+</Tabs>
+
+## Installation
+
+<Tabs className="unique-tabs">
+
+<TabItem value="py" label="Python">
+
+[![Python package](https://github.com/dqrobotics/python/actions/workflows/python_package.yml/badge.svg)](https://github.com/dqrobotics/python/actions/workflows/python_package.yml) 
+[![PyPI version](https://badge.fury.io/py/dqrobotics.svg)](https://badge.fury.io/py/dqrobotics)
+
+
+:::tip release version (recommended for most users)
+The DQ Robotics Python3 is delivered through [PyPI](https://pypi.org/).
+On a Ubuntu LTS (Excluding [EOL](https://endoflife.software/operating-systems/linux/ubuntu)) versions) system, open a terminal and run:
+
+```bash
+python3 -m pip install --user dqrobotics
+```
+
+You can get updates with
+
+```bash
+python3 -m pip install --user dqrobotics --upgrade
+```
+:::
+
+:::caution Development version
+The development version could include more features but it is not recommended for stable implementations.
+
+```bash
+python3 -m pip install --user --pre dqrobotics
+```
+
+You can get updates with
+
+```bash
+python3 -m pip install --user --pre dqrobotics --upgrade
+``` 
+:::
+
+:::caution Warning
+The installation will fail for any unsupported system, even if that system has pip.
+:::
+
+:::danger Had any issues?
+Report them at the [Python-Issue-Tracker](https://github.com/dqrobotics/python/issues).
+:::
+
+</TabItem>
+<TabItem value="cpp" label="C++">
+
+
+
+:::tip Release version (recommended for most users)
+
+```bash
+sudo add-apt-repository ppa:dqrobotics-dev/release
+sudo apt-get update
+sudo apt-get install libdqrobotics
+```
+:::
+
+:::caution Development version
+
+The development version could include more features but it is not recommended for stable implementations. 
+
+```bash
+sudo add-apt-repository ppa:dqrobotics-dev/development
+sudo apt-get update
+sudo apt-get install libdqrobotics
+```
+
+:::
+
+:::info
+All library updates will be delivered together with your regular Ubuntu updates.
+:::
+
+:::danger Had any issues?
+Report them at the [CPP-Issue-Tracker](https://github.com/dqrobotics/cpp/issues).
+:::
+
+</TabItem>
+
+<TabItem value="matlab" label="Matlab">
+
+[![MATLAB Test](https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml/badge.svg?branch=master)](https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml)
+
+
+
+:::tip Release version (recommended for most users)
+
+Assuming that you already have Matlab installed on you computer, 
+download the most recent Matlab toolbox of DQ Robotics **[here](https://github.com/dqrobotics/matlab/releases/latest)**.
+After downloading the file dqrobotics-YY-MM.mltbx, where YY-MM stands for the year and month of release, just open it and Matlab should copy the files to the folder `Toolboxes/dqrobotics-YY-MM` in your `$HOME` folder and appropriately set the Matlab path.
+
+More details at the **[docs](https://dqroboticsgithubio.readthedocs.io/en/latest/installation/matlab.html#matlab-installation)**.
+
+:::
+
+:::caution Development version
+
+Those wanting the results of our latest developments can checkout the master branch of the **[Matlab repository](https://github.com/dqrobotics/matlab)**.
+In order to use DQ Robotics on your MATLAB installation, and supposing you did the checkout at [PATH_TO_DQ_ROBOTICS_FOLDER], just add
+
+```bash
+[PATH_TO_DQ_ROBOTICS_FOLDER]/matlab/
+```
+:::
+
+:::danger Had any issues?
+Report them at the [Matlab-Issue-Tracker](https://github.com/dqrobotics/matlab/issues).
+:::
+
+</TabItem>
+</Tabs>
+
+
+
+
+
