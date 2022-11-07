@@ -35,23 +35,47 @@ function HomepageHeader() {
 function HomepageFooter() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero hero--primary', styles.features)}>
       <div className="container">
         
         <details open>
           <summary>How to cite us</summary>
 
+         
           If you use DQ Robotics in your research, 
-          please cite the DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). 
-          You can also look at the ArXiv version.
+          please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#FFFFFF', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
+          You can also look at the 
+          <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#FFFFFF', fontWeight:'bold' }}> ArXiv version. </a> 
+          
           <div style={{textAlign: 'left', fontSize: '12px'}}>
-          <CodeBlock language="css">{MyComponentSource}</CodeBlock>
+            <CodeBlock language="css">{MyComponentSource}</CodeBlock>
           </div>
         </details>
       </div>
     </header>
   );
 }
+
+
+function HomepageFooterVideo() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <section className={styles.heroBanner}>
+      <div className="container">
+
+          <p align="center">
+          <a href="https://www.youtube.com/watch?v=e8ajS3FVMUI">
+          <img width="1125" height="630"  src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+          
+          </a>
+          </p>    
+        
+      </div>
+
+    </section>
+  );
+}
+
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -63,7 +87,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-
+      <HomepageFooterVideo />
       <HomepageFooter />
     </Layout>
   );

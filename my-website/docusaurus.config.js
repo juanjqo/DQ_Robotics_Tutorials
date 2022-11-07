@@ -102,7 +102,7 @@ const config = {
               },
               {
                 label: 'Team',
-                href: 'https://github.com/orgs/dqrobotics/people',
+                href: 'https://github.com/orgs/dqrobotics/teams/developers',
               },
             ],
           },
