@@ -8,6 +8,10 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 import CodeBlock from '@theme/CodeBlock';
 import MyComponentSource from '!!raw-loader!./citation.mdx';
+import MyMatlabCode from '!!raw-loader!./matlab_example.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 
 
@@ -16,13 +20,14 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p> 
+        
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Getting Started🔥
+            Getting Started
           </Link>
         </div>
     
@@ -77,6 +82,58 @@ function HomepageFooterVideo() {
 }
 
 
+const exampleMatlab = `v := Vertex{X: 1, Y: 2}`;
+
+function HomepageCodeExamples() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <section className={styles.heroBanner}>
+      <div className="container">
+
+      
+
+      <hr  style={{
+          color: '#ececec',
+          backgroundColor: '#ececec',
+          height: 2,
+          borderColor : '#ececec'
+      }}/>
+
+      <div id="cparent"> 
+        <div class="col" style= {{fontWeight:'bold' }}>Matlab
+        <div style={{textAlign: 'left', fontSize: '12px'}}>
+
+        <CodeBlock language="matlab">{"MyComponentSource = a"}</CodeBlock>
+             
+            
+          </div>
+        </div> 
+
+        <div class="col" style= {{fontWeight:'bold' }}>Python</div> 
+
+
+        <div class="col" style= {{fontWeight:'bold' }}>C++</div> 
+      </div>
+
+      <hr  style={{
+          color: '#ececec',
+          backgroundColor: '#ececec',
+          height: 2,
+          borderColor : '#ececec'
+      }}/>
+
+
+            
+     
+        
+      </div>
+      
+
+    </section>
+  );
+}
+
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -87,6 +144,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+      <HomepageCodeExamples />
       <HomepageFooterVideo />
       <HomepageFooter />
     </Layout>

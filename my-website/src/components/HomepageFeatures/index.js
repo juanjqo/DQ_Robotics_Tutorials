@@ -1,11 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import CodeBlock from '@theme/CodeBlock';
+
 
 const FeatureList = [
   {
     title: 'What is DQ Robotics?',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/ad_dq.svg').default,
     description: (
       <>
         DQ Robotics is a standalone open-source (LGPLv3) library for robot modelling and control. 
@@ -26,7 +28,7 @@ const FeatureList = [
   },
   {
     title: 'Requirements',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/re_dq.svg').default,
     description: (
       <>
         We offer official support on a voluntary basis for active Ubuntu LTS versions. However, builds
@@ -34,6 +36,7 @@ const FeatureList = [
       </>
     ),
   },
+
 ];
 
 function Feature({Svg, title, description}) {
