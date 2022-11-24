@@ -16,23 +16,51 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Available in Matlab, Python and C++11',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Powered by Open Software Technologies',
+    Svg: require('@site/static/img/ad_dq.svg').default,
     description: (
       <>
-        Test your ideas fast while having convenient visualization tools using the Matlab version. Use Python 
-        for easy and computationally efficient (C++ code runs under the hood for fast performance) implementations.
-        Use the C++11 version for real-time high-performance applications and if you are not afraid of pointers.
+        The DQ Robotics library uses Eigen and PyBind11.
       </>
     ),
   },
   {
     title: 'Requirements',
-    Svg: require('@site/static/img/re_dq.svg').default,
+    Svg: require('@site/static/img/requirements.svg').default,
     description: (
       <>
         We offer official support on a voluntary basis for active Ubuntu LTS versions. However, builds
         are available for Windows and MacOS (Intel & Apple Silicon) as well.
+      </>
+    ),
+  },
+  {
+    title: 'Available in Matlab',
+    Svg: require('@site/static/img/computer_matlab.svg').default,
+    description: (
+      <>
+        Test your ideas fast while having convenient visualization tools using the Matlab version. 
+      </>
+    ),
+  },
+  {
+    title: 'Available in Python',
+    Svg: require('@site/static/img/computer_python.svg').default,
+    description: (
+      <>
+        Use Python for easy and computationally efficient 
+        (C++ code runs under the hood for fast performance) implementations.
+        
+      </>
+    ),
+  },
+  {
+    title: 'Available in C++11',
+    Svg: require('@site/static/img/computer_cpp.svg').default,
+    description: (
+      <>
+        Use the C++11 version for real-time high-performance applications 
+        and if you are not afraid of pointers.
       </>
     ),
   },

@@ -11,25 +11,88 @@ import MyComponentSource from '!!raw-loader!./citation.mdx';
 import MyMatlabCode from '!!raw-loader!./matlab_example.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
+function Heading({text}) {
+  return <h2 className="Heading">{text}</h2>;
+}
 
+function TextColumn({title, text, moreContent}) {
+  return (
+    <>
+      <Heading text={title} />
+      <div dangerouslySetInnerHTML={{__html: text}} />
+      {moreContent}
+    </>
+  );
+}
+
+export function Section({
+  element = 'section',
+  children,
+  className,
+  background = 'light',
+}) {
+  const El = element;
+  return (
+    <El
+      className={
+        className
+          ? `Section ${className} ${background}`
+          : `Section ${background}`
+      }>
+      {children}
+    </El>
+  );
+}
+
+function TwoColumns({columnOne, columnTwo, reverse}) {
+  return (
+    <div className={`TwoColumns ${reverse ? 'reverse' : ''}`}>
+      <div className={`column first ${reverse ? 'right' : 'left'}`}>
+        {columnOne}
+      </div>
+      <div className={`column last ${reverse ? 'left' : 'right'}`}>
+        {columnTwo}
+      </div>
+    </div>
+  );
+}
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p> 
-        
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Getting Started
-          </Link>
-        </div>
+
+      <Section background="dark" className="HeaderHero">
+      <TwoColumns
+        reverse
+        columnOne={
+          <>
+
+          <img alt="" src={useBaseUrl('img/header_page.svg')} />
+          </>
+        }
+        columnTwo={
+          <>
+                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
+                        <img alt="" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
+                        <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
+                        
+                        
+                        <div className={styles.buttons}>
+                          <Link
+                            className="button button--secondary button--lg"
+                            to="/docs/intro">
+                            Get Started
+                          </Link>
+                        </div>
+          </>
+        }
+      />
+    </Section>
     
 
       </div>
@@ -63,21 +126,33 @@ function HomepageFooter() {
 
 
 function HomepageFooterVideo() {
-  const {siteConfig} = useDocusaurusContext();
+  //const {siteConfig} = useDocusaurusContext();
   return (
-    <section className={styles.heroBanner}>
-      <div className="container">
+    <div>
+    <Section className="VideoContent" background="light">
+      <br />
+      <TwoColumns
+        columnOne={
+          <TextColumn
+            title="IROS 2021 Video"
+            text={"textContent.talks"}
+            
+          />
+        }
+        columnTwo={
+          <div className="vidWrapper">
 
-          <p align="center">
-          <a href="https://www.youtube.com/watch?v=e8ajS3FVMUI">
-          <img width="1125" height="630"  src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
-          
-          </a>
-          </p>    
-        
-      </div>
-
-    </section>
+            <iframe 
+            src="https://www.youtube.com/embed/e8ajS3FVMUI" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+          </div>
+        }
+      />
+      <br />
+    </Section>
+  </div>
   );
 }
 
