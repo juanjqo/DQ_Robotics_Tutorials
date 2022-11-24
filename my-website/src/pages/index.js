@@ -101,18 +101,48 @@ function HomepageCodeExamples() {
 
       <div id="cparent"> 
         <div class="col" style= {{fontWeight:'bold' }}>Matlab
-        <div style={{textAlign: 'left', fontSize: '12px'}}>
+            <div style={{textAlign: 'left', fontSize: '12px'}}>
 
-        <CodeBlock language="matlab">{"MyComponentSource = a"}</CodeBlock>
-             
-            
-          </div>
+
+                      <CodeBlock
+                      language="matlab"
+                      //title="Matlab"
+                      showLineNumbers>
+                                    {`a = 1 + E_*(1+k_)`}
+                    </CodeBlock> 
+                
+              </div>
         </div> 
 
-        <div class="col" style= {{fontWeight:'bold' }}>Python</div> 
+        <div class="col" style= {{fontWeight:'bold' }}>Python
+        
+                 <div style={{textAlign: 'left', fontSize: '12px'}}>
+
+                  <CodeBlock
+                  language="python"
+                  //title="Python"
+                  showLineNumbers>
+                                {`def hello_world(): a = 1 + E_*(1+k_)`}
+                  </CodeBlock> 
+
+                  </div>
+
+        </div> 
 
 
-        <div class="col" style= {{fontWeight:'bold' }}>C++</div> 
+        <div class="col" style= {{fontWeight:'bold' }}>C++
+                <div style={{textAlign: 'left', fontSize: '12px'}}>
+
+                <CodeBlock
+                language="cpp"
+                //title="Python"
+                showLineNumbers>
+                              {` DQ a = 3;`}
+                </CodeBlock> 
+
+                </div>
+        
+        </div> 
       </div>
 
       <hr  style={{
