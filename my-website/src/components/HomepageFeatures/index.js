@@ -16,11 +16,12 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by Open Software Technologies',
+    title: 'Interface Packages',
     Svg: require('@site/static/img/ad_dq.svg').default,
     description: (
       <>
-        The DQ Robotics library uses Eigen and PyBind11.
+        We offer interface packages for third-party software 
+        such as CoppeliaSim, CPLEX, qpOASES, and Json11.
       </>
     ),
   },
