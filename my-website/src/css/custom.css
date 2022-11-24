@@ -41,7 +41,10 @@
 } 
 
 
-
+.link-text-color {
+  color: #277148;
+  font-weight: bold;
+}
 
 
 

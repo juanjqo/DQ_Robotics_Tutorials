@@ -21,7 +21,11 @@ const FeatureList = [
     description: (
       <>
         We offer interface packages for third-party software 
-        such as CoppeliaSim, CPLEX, qpOASES, and Json11.
+        such as <a href="https://www.coppeliarobotics.com/" style= {{color:"#277148", fontWeight:'bold' }}>CoppeliaSim</a>, 
+        <a href="https://www.ibm.com/products/ilog-cplex-optimization-studio" style= {{color:"#277148", fontWeight:'bold' }}> CPLEX</a>,
+        <a href="https://github.com/coin-or/qpOASES" style= {{color:"#277148", fontWeight:'bold' }}> qpOASES</a>, and 
+        <a href="https://github.com/dropbox/json11/tree/2df9473fb3605980db55ecddf34392a2e832ad35" style= {{color:"#277148", fontWeight:'bold' }}> Json11.</a>
+        
       </>
     ),
   },
