@@ -9,6 +9,8 @@ import styles from './index.module.css';
 import CodeBlock from '@theme/CodeBlock';
 import MyComponentSource from '!!raw-loader!./citation.mdx';
 import MyMatlabCode from '!!raw-loader!./matlab_example.mdx';
+import install_shell_python from '!!raw-loader!./install_shell_python.mdx';
+import install_shell_cpp from '!!raw-loader!./install_shell_cpp.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -72,16 +74,20 @@ function HomepageHeader() {
         columnOne={
           <>
 
-          <img alt="" src={useBaseUrl('img/header_page.svg')} />
+          
+          <img  width="800" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+          
           </>
         }
         columnTwo={
           <>
-                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
+                       
+                       {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
                         <img alt="" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
+                        {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
                         <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
                         
-                        
+
                         <div className={styles.buttons}>
                           <Link
                             className="button button--secondary button--lg"
@@ -101,24 +107,40 @@ function HomepageHeader() {
 }
 
 function HomepageFooter() {
+  // This funciton defines the footer
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.features)}>
       <div className="container">
-        
-        <details open>
-          <summary>How to cite us</summary>
 
-         
-          If you use DQ Robotics in your research, 
-          please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#FFFFFF', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
-          You can also look at the 
-          <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#FFFFFF', fontWeight:'bold' }}> ArXiv version. </a> 
+        <h1 style= {{color:'#ffffff', textAlign: 'center', fontSize: '25px'}}>{"Give it a try"}</h1>
+
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '25px'}}>{"1. Install"}</h1>
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"open a terminal and run:"}</h1>
+        
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Python version: "}</h1>
+
           
-          <div style={{textAlign: 'left', fontSize: '12px'}}>
-            <CodeBlock language="css">{MyComponentSource}</CodeBlock>
+          <div style={{textAlign: 'left', fontSize: '18px'}}>
+            <CodeBlock language="shell">{install_shell_python}</CodeBlock>
           </div>
-        </details>
+
+          <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"C++ version:"}</h1>
+
+          <div style={{textAlign: 'left', fontSize: '18px'}}>
+            <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
+          </div>
+
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '25px'}}>{"2. Read this"}</h1>
+
+        <div className={styles.buttons}>
+                          <Link
+                            className="button button--secondary button--lg"
+                            to="/docs/intro">
+                            Get Started
+                          </Link>
+                        </div>
+
       </div>
     </header>
   );
@@ -126,22 +148,39 @@ function HomepageFooter() {
 
 
 function HomepageFooterVideo() {
-  //const {siteConfig} = useDocusaurusContext();
+  // This function defines the "How to cite" and IROS 2021 video
   return (
     <div>
     <Section className="VideoContent" background="light">
       <br />
       <TwoColumns
         columnOne={
-          <TextColumn
-            title="IROS 2021 Video"
-            text={"textContent.talks"}
+          <div className="VideoContent">
+        
+        <TextColumn
+            title={"How to cite"}
           />
+  
+           
+            If you use DQ Robotics in your research, 
+            please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
+            You can also look at the 
+            <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#ff6fa1', fontWeight:'bold' }}> ArXiv version. </a> 
+            
+            <div style={{textAlign: 'left', fontSize: '11px'}}>
+              <CodeBlock language="css">{MyComponentSource}</CodeBlock>
+            </div>
+            
+          
+        </div>
            
         
         }
         columnTwo={
           <div className="vidWrapper">
+              <TextColumn
+              title={"IROS 2021 Video"}
+              />
 
             <iframe 
             src="https://www.youtube.com/embed/e8ajS3FVMUI" 
@@ -252,7 +291,7 @@ export default function Home() {
       </main>
       <HomepageCodeExamples />
       <HomepageFooterVideo />
-      <HomepageFooter />
+     <HomepageFooter /> 
     </Layout>
   );
 }
