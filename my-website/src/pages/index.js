@@ -115,23 +115,50 @@ function HomepageFooter() {
 
         <h1 style= {{color:'#ffffff', textAlign: 'center', fontSize: '25px'}}>{"Give it a try"}</h1>
 
-        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '25px'}}>{"1. Install"}</h1>
-        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"open a terminal and run:"}</h1>
+      
+
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Matlab"}
+        <img alt="" src={useBaseUrl('https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml/badge.svg?branch=master')} />
+        </h1>
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Download the most recent Matlab toolbox of DQ Robotics "}
+           <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#50fa7b', fontWeight:'bold'}}>here.</a>
+        </h1> 
         
-        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Python version: "}</h1>
 
+
+        
+      <div>&nbsp;&nbsp;</div>
+      <div>&nbsp;&nbsp;</div>
+      <div>&nbsp;&nbsp;</div>
+      <div>&nbsp;&nbsp;</div>
+        
+        <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{"Python3"}
+        <img alt="" src={useBaseUrl('https://github.com/dqrobotics/python/actions/workflows/python_package.yml/badge.svg')} />
+        
+        <img alt="" src={useBaseUrl('https://badge.fury.io/py/dqrobotics.svg')} />
+        </h1>
+
+        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1>
           
-          <div style={{textAlign: 'left', fontSize: '18px'}}>
-            <CodeBlock language="shell">{install_shell_python}</CodeBlock>
-          </div>
+        <div style={{textAlign: 'left', fontSize: '18px'}}>
+          <CodeBlock language="shell">{install_shell_python}</CodeBlock>
+        </div>
 
-          <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"C++ version:"}</h1>
+        <div>&nbsp;&nbsp;</div>
+        <div>&nbsp;&nbsp;</div>
+        <div>&nbsp;&nbsp;</div>
+
+          <h1 style= {{color:'#ff6fa1', textAlign: 'left', fontSize: '18px'}}>{"C++11"}         
+          <img alt="" src={useBaseUrl('https://github.com/dqrobotics/cpp/actions/workflows/cpp_build_ubuntu.yml/badge.svg?branch=master')} />
+          </h1>
+          
+          <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1> 
 
           <div style={{textAlign: 'left', fontSize: '18px'}}>
             <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
           </div>
 
-        <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '25px'}}>{"2. Read this"}</h1>
+    
 
         <div className={styles.buttons}>
                           <Link
