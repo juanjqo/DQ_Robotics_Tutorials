@@ -15,6 +15,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import example_code_python from '!!raw-loader!./example_code_python.mdx';
+
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 function Heading({text}) {
   return <h2 className="Heading">{text}</h2>;
@@ -107,7 +114,7 @@ function HomepageHeader() {
 }
 
 function HomepageFooter() {
-  // This funciton defines the footer
+  // This funciton defines the footer, which the instrucctions of installation are shown.
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.features)}>
@@ -130,7 +137,7 @@ function HomepageFooter() {
       <div>&nbsp;&nbsp;</div>
       <div>&nbsp;&nbsp;</div>
       <div>&nbsp;&nbsp;</div>
-      <div>&nbsp;&nbsp;</div>
+      
         
         <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{"Python3"}
         <img alt="" src={useBaseUrl('https://github.com/dqrobotics/python/actions/workflows/python_package.yml/badge.svg')} />
@@ -177,18 +184,18 @@ function HomepageFooter() {
 function HomepageFooterVideo() {
   // This function defines the "How to cite" and IROS 2021 video
   return (
-    <div>
-    <Section className="VideoContent" background="light">
-      <br />
-      <TwoColumns
-        columnOne={
-          <div className="VideoContent">
-        
-        <TextColumn
-            title={"How to cite"}
-          />
   
-           
+    <Section className="VideoContent" background="light">
+        <div className="container">
+
+            <>
+
+            <Container>
+            <Row  className="justify-content-md-center">
+            <Col >
+
+            <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
+
             If you use DQ Robotics in your research, 
             please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
             You can also look at the 
@@ -197,29 +204,30 @@ function HomepageFooterVideo() {
             <div style={{textAlign: 'left', fontSize: '11px'}}>
               <CodeBlock language="css">{MyComponentSource}</CodeBlock>
             </div>
-            
-          
-        </div>
-           
-        
-        }
-        columnTwo={
-          <div className="vidWrapper">
-              <TextColumn
-              title={"IROS 2021 Video"}
-              />
 
-            <iframe 
-            src="https://www.youtube.com/embed/e8ajS3FVMUI" 
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
+
+            </Col>
+            <Col >
+              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
+              <iframe 
+              src="https://www.youtube.com/embed/e8ajS3FVMUI" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+            
+            </Col>
+            </Row>
+            </Container>
+           
+            </>
+            
+             
+        
           </div>
-        }
-      />
-      <br />
     </Section>
-  </div>
+
+
+  
   );
 }
 
@@ -227,81 +235,45 @@ function HomepageFooterVideo() {
 const exampleMatlab = `v := Vertex{X: 1, Y: 2}`;
 
 function HomepageCodeExamples() {
+  // This function shows the example with CoppeliaSim using Matlab, Python and C++
   const {siteConfig} = useDocusaurusContext();
   return (
-    <section className={styles.heroBanner}>
-      <div className="container">
 
-      
-
-      <hr  style={{
-          color: '#ececec',
-          backgroundColor: '#ececec',
-          height: 2,
-          borderColor : '#ececec'
-      }}/>
-
-      <div id="cparent"> 
-        <div class="col" style= {{fontWeight:'bold' }}>Matlab
-            <div style={{textAlign: 'left', fontSize: '12px'}}>
-
-
-                      <CodeBlock
-                      language="matlab"
-                      //title="Matlab"
-                      showLineNumbers>
-                                    {`a = 1 + E_*(1+k_)`}
-                    </CodeBlock> 
-                
-              </div>
-        </div> 
-
-        <div class="col" style= {{fontWeight:'bold' }}>Python
+    <Section className="VideoContent" background="light">
+      <div className="container">      
+          <>
+          <Tabs>
+                <TabItem value="python" label="Python" default>
+                      <div style={{textAlign: 'left', fontSize: '14px'}}>
+                        <CodeBlock language="python">{example_code_python}</CodeBlock>
+                      </div>
+                </TabItem>
+                <TabItem value="cpp" label="C++">
+                  This is an orange 🍊
+                </TabItem>
+                <TabItem value="matlab" label="Matlab">
+                  This is a banana 🍌
+                </TabItem>
+          </Tabs>
         
-                 <div style={{textAlign: 'left', fontSize: '12px'}}>
-
-                  <CodeBlock
-                  language="python"
-                  //title="Python"
-                  showLineNumbers>
-                                {`def hello_world(): a = 1 + E_*(1+k_)`}
-                  </CodeBlock> 
-
-                  </div>
-
-        </div> 
+          <video
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    src={useBaseUrl(`img/residualAngle.mp4`)}
+                    width={"100%"}
+                    
+                  />
 
 
-        <div class="col" style= {{fontWeight:'bold' }}>C++
-                <div style={{textAlign: 'left', fontSize: '12px'}}>
-
-                <CodeBlock
-                language="cpp"
-                //title="Python"
-                showLineNumbers>
-                              {` DQ a = 3;`}
-                </CodeBlock> 
-
-                </div>
-        
-        </div> 
-      </div>
-
-      <hr  style={{
-          color: '#ececec',
-          backgroundColor: '#ececec',
-          height: 2,
-          borderColor : '#ececec'
-      }}/>
-
-
-            
+          </>
      
-        
-      </div>
-      
+          </div>
+    </Section>
+    
+    
 
-    </section>
   );
 }
 
@@ -316,7 +288,19 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+      <hr  style={{
+          color: '#ececec',
+          backgroundColor: '#ececec',
+          height: 2,
+          borderColor : '#ececec'
+      }}/>
       <HomepageCodeExamples />
+      <hr  style={{
+          color: '#ececec',
+          backgroundColor: '#ececec',
+          height: 2,
+          borderColor : '#ececec'
+      }}/>
       <HomepageFooterVideo />
      <HomepageFooter /> 
     </Layout>

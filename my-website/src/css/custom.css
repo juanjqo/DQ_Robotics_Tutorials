@@ -225,7 +225,7 @@
    }
  
    .FastRefresh video {
-     width: 100%;
+     width: 80%;
    }
  }
  
@@ -257,7 +257,7 @@
  
    /* Need to set video height so it'll fit */
    .FastRefresh video {
-     height: 340px;
+     height: 500px;
      /* width: 100%; */
    }
  }
@@ -580,7 +580,7 @@
  
    /* Correct for whitespace in the image of phones */
    .NativeApps .column.left {
-     margin-top: -25px;
+     margin-top: -50px;
    }
  }
  
@@ -596,7 +596,7 @@
  
  .NativeCode .prism-code {
    border-radius: 0;
-   font-size: 80%;
+   font-size: 90%;
    background-color: #282c34;
  }
  
@@ -638,7 +638,7 @@
      /* Make flush with top and bottom */
      margin-top: -50px;
      /* Get rid of default left padding */
-     padding-left: 0;
+     padding-left: -15;
    }
  
    .NativeCode .column.right .prism-code {
