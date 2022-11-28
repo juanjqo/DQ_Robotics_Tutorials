@@ -192,7 +192,7 @@ function HomepageFooterVideo() {
 
             <Container>
             <Row  className="justify-content-md-center">
-            <Col >
+            <Col  >
 
             <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
 
@@ -209,11 +209,16 @@ function HomepageFooterVideo() {
             </Col>
             <Col >
               <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
+              <div class="h_iframe">
               <iframe 
               src="https://www.youtube.com/embed/e8ajS3FVMUI" 
               title="YouTube video player" frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+       
               allowfullscreen></iframe>
+              </div>
+
+
             
             </Col>
             </Row>
