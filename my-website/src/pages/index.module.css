@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 0rem 0;
+  padding: 1rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -29,4 +29,44 @@
   position: relative;
   overflow: hidden;
   background-color: #3f454f;
+}
+
+.always_dark {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #32363e;
+}
+
+.always_light {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #000000
+}
+
+
+.python_tab_color{
+  color: #000000;
+  font-weight: bold;
+}
+.python_tab_color[aria-selected='true']{
+  border-bottom-color: #23b4dc;
+}
+
+.cpp_tab_color{
+  color: #000000;
+}
+.cpp_tab_color[aria-selected='true']{
+  border-bottom-color: #ea568a;
+}
+
+.matlab_tab_color{
+  color: #000000;
+}
+.matlab_tab_color[aria-selected='true']{
+  border-bottom-color: #868686;
 }

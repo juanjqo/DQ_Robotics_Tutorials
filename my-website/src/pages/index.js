@@ -15,7 +15,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import example_code_python from '!!raw-loader!./example_code_python.mdx';
+import example_code_python from '!!raw-loader!./example_code_python.txt';
+import example_code_cpp    from '!!raw-loader!./example_code_cpp.txt';
+import example_code_matlab from '!!raw-loader!./example_code_matlab.txt';
 
 
 import Container from 'react-bootstrap/Container';
@@ -74,15 +76,15 @@ function TwoColumns({columnOne, columnTwo, reverse}) {
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero hero--primary', styles.always_dark)}>
       <div className="container">
 
-      <Section background="dark" className="HeaderHero">      
+      <section className={styles.always_dark}>     
                        <>                    
                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
 
                         <div className="container">
-                         <img  width="300" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+                         <img  width="350" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
                         </div>
                         
                         <>
@@ -94,7 +96,7 @@ function HomepageHeader() {
                         </>
       
       
-    </Section>
+    </section>
     
 
       </div>
@@ -245,18 +247,21 @@ function HomepageFooter() {
 
 function HomepageFooterVideo() {
   // This function defines the "How to cite" and IROS 2021 video
+  const {siteConfig} = useDocusaurusContext();
   return (
-  
-    <Section className="VideoContent" background="light">
-        <div className="container">
+
+      <header className={clsx('hero hero--primary', styles.always_light)}>
+      <div className="container">
+
+      <section className={styles.always_light}>   
 
             <>
 
             <Container>
             <Row  className="justify-content-md-center">
             <Col  >
-           
-              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
+              {/*<h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> */}
+              <h1 style= {{textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
 
               If you use DQ Robotics in your research, 
               please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
@@ -271,8 +276,8 @@ function HomepageFooterVideo() {
 
             </Col>
             <Col >
-            
-              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
+              {/*<h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1>  */}
+              <h1 style= {{textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
               
               <div className="video-responsive">
               <iframe
@@ -294,8 +299,9 @@ function HomepageFooterVideo() {
             
              
         
-          </div>
-    </Section>
+            </section>
+       </div>
+      </header>
 
 
   
@@ -310,28 +316,39 @@ function HomepageCodeExamples() {
   const {siteConfig} = useDocusaurusContext();
   return (
 
-    <Section className="VideoContent" background="light">
-      <div className="container">      
+    <header className={clsx('hero hero--primary', styles.always_light)}>
+    <div className="container">
+
+    <section className={styles.always_light}>      
           <>
-          <Tabs>
-                <TabItem value="python" label="Python" default>
-                      <div style={{textAlign: 'left', fontSize: '14px'}}>
-                        <CodeBlock language="python">{example_code_python}</CodeBlock>
-                      </div>
-                </TabItem>
-                <TabItem value="cpp" label="C++">
-                      <div style={{textAlign: 'left', fontSize: '14px'}}>
-                        <CodeBlock language="python">{example_code_python}</CodeBlock>
-                      </div>
-                </TabItem>
-                <TabItem value="matlab" label="Matlab">
-                      <div style={{textAlign: 'left', fontSize: '14px'}}>
-                        <CodeBlock language="python">{example_code_python}</CodeBlock>
-                      </div>
-                </TabItem>
-          </Tabs>
-        
-          <video
+                          
+
+          <Container>
+          <Row  className="justify-content-md-center">
+          <Col  >
+          
+                    <Tabs>
+                    <TabItem value="python" label="Python" attributes={{className: styles.python_tab_color}}>
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <CodeBlock language="python">{example_code_python}</CodeBlock>
+                          </div>
+                    </TabItem>
+                    <TabItem value="cpp" label="C++"  attributes={{className: styles.cpp_tab_color}}>
+                          <div style={{textAlign: 'left', fontSize: '12px'}}>
+                            <CodeBlock language="cpp">{example_code_cpp}</CodeBlock>
+                          </div>
+                    </TabItem>
+                    <TabItem value="matlab" label="Matlab"  attributes={{className: styles.matlab_tab_color}}>
+                          <div style={{textAlign: 'left', fontSize: '12px'}}>
+                            <CodeBlock language="python">{example_code_matlab}</CodeBlock>
+                          </div>
+                    </TabItem>
+              </Tabs>
+           
+          </Col>
+          <Col >
+          <div className="video-responsive">
+              <video
                     muted
                     autoPlay
                     loop
@@ -339,14 +356,19 @@ function HomepageCodeExamples() {
                     src={useBaseUrl(`img/residualAngle.mp4`)}
                     width={"100%"}
                     
-                  />
+                />
+          </div>
 
 
+          </Col>      
+          </Row>
+          </Container>
+           
           </>
      
-          </div>
-    </Section>
-    
+          </section>
+       </div>
+      </header>
     
 
   );
@@ -364,19 +386,19 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-      <hr  style={{
+      {/*<hr  style={{
           color: '#ececec',
           backgroundColor: '#ececec',
-          height: 2,
+          height: 1,
           borderColor : '#ececec'
-      }}/>
+      }}/>*/}
       <HomepageCodeExamples />
-      <hr  style={{
+     {/* <hr  style={{
           color: '#ececec',
           backgroundColor: '#ececec',
           height: 2,
           borderColor : '#ececec'
-      }}/>
+      }}/>*/}
       <HomepageFooterVideo />
       
       {/*<HomepageFooter /> */}

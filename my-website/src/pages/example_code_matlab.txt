@@ -1,0 +1,10 @@
+    x = kuka.fkm(q);
+    e = epsilon+1;
+    while norm(e) > epsilon
+        J = kuka.pose_jacobian(q);
+        x = kuka.fkm(q);
+        e = vec8(xd-x);
+        q = q+pinv(J)*gain*e;
+        plot(kuka, q');    
+        drawnow;
+    end
