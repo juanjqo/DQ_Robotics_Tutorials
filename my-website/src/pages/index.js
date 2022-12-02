@@ -21,6 +21,8 @@ import example_code_python from '!!raw-loader!./example_code_python.mdx';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import PropTypes from "prop-types";
+
 
 
 function Heading({text}) {
@@ -75,41 +77,101 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
 
-      <Section background="dark" className="HeaderHero">
-      <TwoColumns
-        reverse
-        columnOne={
-          <>
-
-          
-          <img  width="800" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
-          
-          </>
-        }
-        columnTwo={
-          <>
-                       
+      <Section background="dark" className="HeaderHero">      
+                       <>                    
                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
+
+                        <div className="container">
+                         <img  width="300" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+                        </div>
+                        
+                        <>
                         <img alt="" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
+                        </>
                         {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
                         <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
-                        
-
-                        <div className={styles.buttons}>
-                          <Link
-                            className="button button--secondary button--lg"
-                            to="/docs/intro">
-                            Get Started
-                          </Link>
-                        </div>
-          </>
-        }
-      />
+                               
+                        </>
+      
+      
     </Section>
     
 
       </div>
     </header>
+  );
+}
+
+function HomepageInstallDQRobotics() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.features_alternative)}>
+      <div className="container">
+
+      <section className={styles.features_alternative}>    
+                       <>                    
+
+
+
+                        <div className="container">
+
+                              <h1 style= {{color:'#ffffff', textAlign: 'center', fontSize: '25px'}}>{"Install DQ Robotics"}</h1>
+                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Matlab"}
+                              <img alt="" src={useBaseUrl('https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml/badge.svg?branch=master')} />
+                              </h1>
+                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Download the most recent Matlab toolbox of DQ Robotics "}
+                                <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#50fa7b', fontWeight:'bold'}}>here.</a>
+                              </h1> 
+
+                              <div>&nbsp;&nbsp;</div>
+                              {/* 
+                              <div>&nbsp;&nbsp;</div>
+                              <div>&nbsp;&nbsp;</div>
+                              <div>&nbsp;&nbsp;</div>
+                              */}
+
+                              <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{"Python3"}
+                              <img alt="" src={useBaseUrl('https://github.com/dqrobotics/python/actions/workflows/python_package.yml/badge.svg')} />
+
+                              <img alt="" src={useBaseUrl('https://badge.fury.io/py/dqrobotics.svg')} />
+                              </h1>
+
+                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1>
+                                
+                              <div style={{textAlign: 'left', fontSize: '18px'}}>
+                                <CodeBlock language="shell">{install_shell_python}</CodeBlock>
+                              </div>
+
+                              <div>&nbsp;&nbsp;</div>
+                              
+
+                                <h1 style= {{color:'#ff6fa1', textAlign: 'left', fontSize: '18px'}}>{"C++11"}         
+                                <img alt="" src={useBaseUrl('https://github.com/dqrobotics/cpp/actions/workflows/cpp_build_ubuntu.yml/badge.svg?branch=master')} />
+                                </h1>
+                                
+                                <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1> 
+
+                                <div style={{textAlign: 'left', fontSize: '18px'}}>
+                                  <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
+                                </div>
+
+                                <div>&nbsp;&nbsp;</div>
+
+                                <div className={styles.buttons}>
+                                                <Link
+                                                  className="button button--secondary button--lg"
+                                                  to="/docs/intro">
+                                                  Get Started
+                                                </Link>
+                                </div>
+
+                        </div>
+          </>
+      
+      
+        </section>
+       </div>
+      </header>
   );
 }
 
@@ -134,9 +196,9 @@ function HomepageFooter() {
 
 
         
-      <div>&nbsp;&nbsp;</div>
-      <div>&nbsp;&nbsp;</div>
-      <div>&nbsp;&nbsp;</div>
+       <div>&nbsp;&nbsp;</div>
+       <div>&nbsp;&nbsp;</div>
+       <div>&nbsp;&nbsp;</div>
       
         
         <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{"Python3"}
@@ -193,33 +255,37 @@ function HomepageFooterVideo() {
             <Container>
             <Row  className="justify-content-md-center">
             <Col  >
+           
+              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
 
-            <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
+              If you use DQ Robotics in your research, 
+              please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
+              You can also look at the 
+              <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#ff6fa1', fontWeight:'bold' }}> ArXiv version. </a> 
+              
+              <div style={{textAlign: 'left', fontSize: '11px'}}>
+                <CodeBlock language="css">{MyComponentSource}</CodeBlock>
+              </div>
 
-            If you use DQ Robotics in your research, 
-            please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
-            You can also look at the 
-            <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#ff6fa1', fontWeight:'bold' }}> ArXiv version. </a> 
-            
-            <div style={{textAlign: 'left', fontSize: '11px'}}>
-              <CodeBlock language="css">{MyComponentSource}</CodeBlock>
-            </div>
-
+             
 
             </Col>
             <Col >
-              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
-              <div class="h_iframe">
-              <iframe 
-              src="https://www.youtube.com/embed/e8ajS3FVMUI" 
-              title="YouTube video player" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-       
-              allowfullscreen></iframe>
-              </div>
-
-
             
+              <h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
+              
+              <div className="video-responsive">
+              <iframe
+                width="853"
+                height="480"
+                src={`https://www.youtube.com/embed/e8ajS3FVMUI`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+              />
+             </div>
+
             </Col>
             </Row>
             </Container>
@@ -254,10 +320,14 @@ function HomepageCodeExamples() {
                       </div>
                 </TabItem>
                 <TabItem value="cpp" label="C++">
-                  This is an orange 🍊
+                      <div style={{textAlign: 'left', fontSize: '14px'}}>
+                        <CodeBlock language="python">{example_code_python}</CodeBlock>
+                      </div>
                 </TabItem>
                 <TabItem value="matlab" label="Matlab">
-                  This is a banana 🍌
+                      <div style={{textAlign: 'left', fontSize: '14px'}}>
+                        <CodeBlock language="python">{example_code_python}</CodeBlock>
+                      </div>
                 </TabItem>
           </Tabs>
         
@@ -290,6 +360,7 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
+      <HomepageInstallDQRobotics/>
       <main>
         <HomepageFeatures />
       </main>
@@ -307,7 +378,8 @@ export default function Home() {
           borderColor : '#ececec'
       }}/>
       <HomepageFooterVideo />
-     <HomepageFooter /> 
+      
+      {/*<HomepageFooter /> */}
     </Layout>
   );
 }
