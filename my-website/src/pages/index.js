@@ -82,18 +82,30 @@ function HomepageHeader() {
       <section className={styles.always_dark}>     
                        <>                    
                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
-
-                        <div className="container">
-                         <img  width="350" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
-                        </div>
-                        
-                        <>
-                        <img alt="" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
-                        </>
-                        {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
-                        <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
+                       <Container>
+                      <Row  className="justify-content-md-center">
+                      <Col  >
+                         <>
+                         <img alt=""  width="562" height="215" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
+                         </>
+                         {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
+                         <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
                                
+                        
+
+                      </Col>
+                      <Col >
+                        <div className="container">
+                         <img  width="450" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+                        </div>
+
+                      </Col>
+                      </Row>
+                      </Container>
+
+
                         </>
+
       
       
     </section>
