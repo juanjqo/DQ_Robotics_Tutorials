@@ -128,24 +128,15 @@ function HomepageInstallDQRobotics() {
 
 
                         <div className="container">
+                        <h1 style= {{color:'#ffffff', textAlign: 'center', fontSize: '30px'}}>{"Install DQ Robotics"}</h1>
 
-                              <h1 style= {{color:'#ffffff', textAlign: 'center', fontSize: '25px'}}>{"Install DQ Robotics"}</h1>
-                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{""}
-                              <a href="https://github.com/dqrobotics/matlab" style= {{color:'#ffffff', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>Matlab </a>
-                              <img alt="" src={useBaseUrl('https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml/badge.svg?branch=master')} />&nbsp;
-                              <a href="https://github.com/dqrobotics/matlab/issues" style= {{color:'#ffbe00', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>⚠️ Issue tracker </a>
-                              </h1>
-                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Download the most recent Matlab toolbox of DQ Robotics "}
-                                <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#50fa7b', fontWeight:'bold'}}>here.</a>
-                              </h1> 
-
-                              <div>&nbsp;&nbsp;</div>
-                              {/* 
-                              <div>&nbsp;&nbsp;</div>
-                              <div>&nbsp;&nbsp;</div>
-                              <div>&nbsp;&nbsp;</div>
-                              */}
-
+   
+                         <div>&nbsp;&nbsp;</div>
+                         <div>&nbsp;&nbsp;</div>
+                        <Container>
+                        <Row  className="justify-content-md-center">
+                         <Col >  
+                              
                               <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{""}
                               <a href="https://github.com/dqrobotics/python" style= {{color:'#61dafb', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>Python3 </a>
                               <img alt="" src={useBaseUrl('https://github.com/dqrobotics/python/actions/workflows/python_package.yml/badge.svg')} />
@@ -154,7 +145,7 @@ function HomepageInstallDQRobotics() {
                               <a href="https://github.com/dqrobotics/python/issues" style= {{color:'#ffbe00', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>⚠️ Issue tracker </a>
                               </h1>
 
-                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1>
+                              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Open a terminal and run:"}</h1>
                                 
                               <div style={{textAlign: 'left', fontSize: '18px'}}>
                                 <CodeBlock language="shell">{install_shell_python}</CodeBlock>
@@ -162,21 +153,47 @@ function HomepageInstallDQRobotics() {
 
                               <div>&nbsp;&nbsp;</div>
                               
-
+                         </Col>  
+                         <Col  >  
+                                       
                                 <h1 style= {{color:'#ff6fa1', textAlign: 'left', fontSize: '18px'}}>{""}     
-                                <a href="https://github.com/dqrobotics/cpp" style= {{color:'#ff6fa1', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>C++11 </a>    
+                                <a href="https://github.com/dqrobotics/cpp" style= {{color:'#ff6fa1', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>C++11 </a>  
                                 <img alt="" src={useBaseUrl('https://github.com/dqrobotics/cpp/actions/workflows/cpp_build_ubuntu.yml/badge.svg?branch=master')} />&nbsp;
                                 <a href="https://github.com/dqrobotics/cpp/issues" style= {{color:'#ffbe00', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>⚠️ Issue tracker </a>
                                 </h1>
                                 
-                                <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '15px'}}>{"Open a terminal and run:"}</h1> 
+                                <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Open a terminal and run:"}</h1> 
 
                                 <div style={{textAlign: 'left', fontSize: '18px'}}>
                                   <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
                                 </div>
 
                                 <div>&nbsp;&nbsp;</div>
+                         </Col>
+                          </Row>
+                          <Row>
+                          <Col > 
 
+                          <div>&nbsp;&nbsp;</div>
+                          <div style={{textAlign: 'center'}}>   
+                            <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{""}
+                                  <a href="https://github.com/dqrobotics/matlab" style= {{color:'#ffffff', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>Matlab </a>
+                                  <img alt="" src={useBaseUrl('https://github.com/dqrobotics/matlab/actions/workflows/matlab_test.yml/badge.svg?branch=master')} />&nbsp;
+                                  <a href="https://github.com/dqrobotics/matlab/issues" style= {{color:'#ffbe00', fontWeight:'bold', textAlign: 'left', fontSize: '18px' }}>⚠️ Issue tracker </a>
+                                  </h1>
+                                  <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Download the most recent Matlab toolbox of DQ Robotics "}
+                                    <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#50fa7b', fontWeight:'bold'}}>here. </a>
+                                    Check this <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#61dafb', fontWeight:'bold'}}>course </a> 
+                                    if you want to learn DQ Robotics in Matlab.
+                                </h1> 
+                                
+                          </div>
+                         </Col>
+                          </Row>
+
+                         </Container>
+                         <div>&nbsp;&nbsp;</div>
+                         <div>&nbsp;&nbsp;</div>
                                 <div className={styles.buttons}>
                                                 <Link
                                                   className="button button--secondary button--lg"
