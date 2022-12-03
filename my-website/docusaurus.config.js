@@ -67,13 +67,25 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: 'Get Started',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'News', position: 'left'},
           {
-            href: 'https://dqrobotics.github.io/',
-            label: 'Official DQ Robotics Site',
+            href: 'https://dqroboticsgithubio.readthedocs.io/en/latest/',
+            label: 'Documentation',
             position: 'right',
+          },
+          {
+            label: 'Citations',
+            to: '/citations',
+            position: 'right'
+          },
+          {
+            //label: 'GitHub',
+            href: 'https://github.com/dqrobotics',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+            position: 'right'
           },
         ],
       },
@@ -81,11 +93,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'DQ Robotics',
             items: [
               {
-                label: 'Docs',
+                label: 'Get Started',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Learn DQ Robotics in Matlab',
+                href: 'https://github.com/dqrobotics/learning-dqrobotics-in-matlab',
               },
             ],
           },
@@ -93,11 +109,11 @@ const config = {
             title: 'Developers',
             items: [
               {
-                label: 'Prof. Bruno Vilhena Adorno, Ph.D.',
+                label: 'Bruno Vilhena Adorno',
                 href: 'https://personalpages.manchester.ac.uk/staff/bruno.adorno/',
               },
               {
-                label: 'Prof. Murilo Marques Marinho, Ph.D.',
+                label: 'Murilo Marques Marinho',
                 href: 'https://mmmarinho.github.io/',
               },
               {
@@ -110,17 +126,22 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
+                label: 'News',
                 to: '/blog',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/dqrobotics',
               },
+              {
+                label: 'Citations',
+                to: '/citations',
+              },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}. The DQ Robotics software is provided “as is”, 
+        copyright: `Copyright © ${new Date().getFullYear()}. DQ robotics is brought to you by Bruno Vilhena Adorno and Murilo Marques Marinho.
+        The DQ Robotics software is provided “as is”, 
         without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, 
         fitness for a particular purpose and noninfrigement. 
         
