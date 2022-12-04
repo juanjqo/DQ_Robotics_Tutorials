@@ -1,54 +1,40 @@
-#include <iostream>
-#include <string>
-#include <thread>
 #include <dqrobotics/DQ.h>
 #include <dqrobotics/interfaces/vrep/DQ_VrepInterface.h>
-#include <dqrobotics/utils/DQ_LinearAlgebra.h>
-#include <dqrobotics/utils/DQ_Constants.h>
-#include <Eigen/Dense>
-#include <dqrobotics/robot_modeling/DQ_SerialManipulatorDH.h>
+#include <dqrobotics/robots/FrankaEmikaPandaRobot.h>
 #include <dqrobotics/robot_control/DQ_PseudoinverseController.h>
-#include <dqrobotics/robot_control/DQ_KinematicController.h>
+#include <thread>
 
-using namespace Eigen;
-
-int main(void)
+int main()
 {
     DQ_VrepInterface vi;
     vi.connect(19997,100,10);
     vi.set_synchronous(true);
-    std::cout << "Starting V-REP simulation..." << std::endl;
     vi.start_simulation();
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    
-    DQ_PseudoinverseController controller(&franka);
+
+    std::vector<std::string>
+    jointnames ={"Franka_joint1", "Franka_joint2",
+                 "Franka_joint3", "Franka_joint4",
+                 "Franka_joint5", "Franka_joint6",
+                 "Franka_joint7"};
+
+    auto robot = FrankaEmikaPandaRobot::kinematics();
+    DQ_PseudoinverseController controller
+    (std::static_pointer_cast<DQ_Kinematics>
+    (std::make_shared<DQ_SerialManipulatorMDH>(robot)));
+
     controller.set_gain(0.5);
-    controller.set_damping(0.05);
+    controller.set_damping(0.01);
     controller.set_control_objective(DQ_robotics::Translation);
     controller.set_stability_threshold(0.00001);
+    auto pd =  vec4(0.2*i_ + 0.3*j_ + 0.3*k_);
 
-    DQ xdesired = 1 + E_*0.5*DQ(0, 0.2, 0.3, 0.3);
-    vi.set_object_pose("DesiredFrame", xdesired);
-
-    int i=0;
     while (not controller.system_reached_stable_region())
     {
-
-        VectorXd q = vi.get_joint_positions(jointnames);
-        vi.set_object_pose("ReferenceFrame", franka.fkm(q));
-        VectorXd u = controller.compute_setpoint_control_signal(q, vec4(xdesired.translation()));
-        std::cout << "error: " <<controller.get_last_error_signal().norm()<<" Iteration: "<<i<<std::endl;
-        std::cout<< "Is stable?: "<<controller.system_reached_stable_region()<<std::endl;
-
+        auto q = vi.get_joint_positions(jointnames);
+        auto u = controller.compute_setpoint_control_signal(q, pd);
         vi.set_joint_target_velocities(jointnames, u);
         vi.trigger_next_simulation_step();
 
-        std::cout<< "q_dot: "<<vi.get_joint_velocities(jointnames)<<std::endl;
-        i++;
-
     }
-    std::cout << "Stopping V-REP simulation..." << std::endl;
-    vi.stop_simulation();
-    vi.disconnect();
-    return 0;
 }

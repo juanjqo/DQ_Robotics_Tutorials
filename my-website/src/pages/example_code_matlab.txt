@@ -1,10 +1,30 @@
-    x = kuka.fkm(q);
-    e = epsilon+1;
-    while norm(e) > epsilon
-        J = kuka.pose_jacobian(q);
-        x = kuka.fkm(q);
-        e = vec8(xd-x);
-        q = q+pinv(J)*gain*e;
-        plot(kuka, q');    
-        drawnow;
-    end
+clear all;
+close all;
+clc;
+
+include_namespace_dq;
+
+vi = DQ_VrepInterface;
+vi.connect('127.0.0.1',19997, 100, 10);
+vi.set_synchronous(True);
+vi.start_simulation();
+
+jointnames = ["Franka_joint1", "Franka_joint2",...
+              "Franka_joint3", "Franka_joint4",...
+              "Franka_joint5", "Franka_joint6",...
+              "Franka_joint7"];
+
+robot = FrankaEmikaPandaRobot.kinematics();
+controller = DQ_PseudoinverseController(robot);
+controller.set_gain(0.5);
+controller.set_damping(0.01);
+controller.set_control_objective(ControlObjective.Translation)
+controller.set_stability_threshold(0.00001);
+pd = vec4(0.2 * i_ + 0.3 * j_ + 0.3 * k_);
+
+while ~pseudoinverse_controller.system_reached_stable_region()
+    q = vi.get_joint_positions(jointnames);
+    u = controller.compute_setpoint_control_signal(q, pd);
+    vi.set_joint_target_velocities(jointnames, u)
+    vi.trigger_next_simulation_step()
+end

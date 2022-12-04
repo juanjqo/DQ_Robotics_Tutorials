@@ -23,7 +23,6 @@ import example_code_matlab from '!!raw-loader!./example_code_matlab.txt';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PropTypes from "prop-types";
 
 
 
@@ -183,7 +182,7 @@ function HomepageInstallDQRobotics() {
                                   </h1>
                                   <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '18px'}}>{"Download the most recent Matlab toolbox of DQ Robotics "}
                                     <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#50fa7b', fontWeight:'bold'}}>here. </a>
-                                    Check this <a href="https://github.com/dqrobotics/matlab/releases/tag/20.04.0.1" style= {{color:'#61dafb', fontWeight:'bold'}}>course </a> 
+                                    Check this <a href="https://github.com/dqrobotics/learning-dqrobotics-in-matlab" style= {{color:'#61dafb', fontWeight:'bold'}}>course </a> 
                                     if you want to learn DQ Robotics in Matlab.
                                 </h1> 
                                 
@@ -344,7 +343,7 @@ function HomepageFooterVideo() {
 }
 
 
-const exampleMatlab = `v := Vertex{X: 1, Y: 2}`;
+
 
 function HomepageCodeExamples() {
   // This function shows the example with CoppeliaSim using Matlab, Python and C++
@@ -364,8 +363,8 @@ function HomepageCodeExamples() {
           
                     <Tabs>
                     <TabItem value="python" label="Python" attributes={{className: styles.python_tab_color}}>
-                          <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <CodeBlock language="python">{example_code_python}</CodeBlock>
+                          <div style={{textAlign: 'left', fontSize: '12px'}}>
+                            <CodeBlock language="cpp">{example_code_python}</CodeBlock>
                           </div>
                     </TabItem>
                     <TabItem value="cpp" label="C++"  attributes={{className: styles.cpp_tab_color}}>
@@ -375,7 +374,7 @@ function HomepageCodeExamples() {
                     </TabItem>
                     <TabItem value="matlab" label="Matlab"  attributes={{className: styles.matlab_tab_color}}>
                           <div style={{textAlign: 'left', fontSize: '12px'}}>
-                            <CodeBlock language="python">{example_code_matlab}</CodeBlock>
+                            <CodeBlock language="cpp">{example_code_matlab}</CodeBlock>
                           </div>
                     </TabItem>
               </Tabs>
