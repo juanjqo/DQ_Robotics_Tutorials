@@ -284,10 +284,10 @@ function HomepageFooterVideo() {
   const {siteConfig} = useDocusaurusContext();
   return (
 
-      <header className={clsx('hero hero--primary', styles.always_light)}>
+      <header className={clsx('hero hero--primary', styles.features_alternative)}>
       <div className="container">
 
-      <section className={styles.always_light}>   
+      <section className={styles.features_alternative}>   
 
             <>
 
@@ -295,7 +295,7 @@ function HomepageFooterVideo() {
             <Row  className="justify-content-md-center">
             <Col  >
               {/*<h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> */}
-              <h1 style= {{textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
+              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
 
               If you use DQ Robotics in your research, 
               please cite the  <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a> 
@@ -311,7 +311,7 @@ function HomepageFooterVideo() {
             </Col>
             <Col >
               {/*<h1 style= {{color:'#000000', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1>  */}
-              <h1 style= {{textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
+              <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"IROS 2021 Video"}</h1> 
               
               <div className="video-responsive">
               <iframe
@@ -331,14 +331,36 @@ function HomepageFooterVideo() {
            
             </>
             
-             
-        
             </section>
        </div>
       </header>
 
 
   
+  );
+}
+
+
+function HomepageFeaturesModeling() {
+  // This function shows the videos in the main page
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    
+    <header className={clsx('hero hero--primary', styles.always_gray)}>
+    
+    <div className="container">
+    
+    <section className={styles.always_gray}>      
+          {/* <div>&nbsp;&nbsp;</div> */}             
+          <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Robot Modeling"}</h1>
+          
+          <img alt=""  height="auto" src={useBaseUrl('img/geometricPrimitives.png')} />          
+          
+          </section>
+       </div>
+      </header>
+    
+
   );
 }
 
@@ -354,13 +376,8 @@ function HomepageAnimation() {
     <div className="container">
     
     <section className={styles.always_light}>      
-          
-                          
-
-          {/* <div>&nbsp;&nbsp;</div> */}
-          
-          
-          <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '45px'}}>{"Dual Quaternions in DQ Robotics"}</h1>
+          {/* <div>&nbsp;&nbsp;</div> */}             
+          <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Dual Quaternions in DQ Robotics"}</h1>
           <div className="video-responsive">
               <video
                     muted
@@ -368,10 +385,8 @@ function HomepageAnimation() {
                     loop
                     playsInline
                     src={useBaseUrl(`img/dqrobotics_animation.mp4`)}
-                    width={"100%"}
-                    
-                />
-                
+                    width={"100%"}                
+                />             
           </div>
           </section>
        </div>
@@ -474,7 +489,8 @@ export default function Home() {
       {/* <hr  style={{color: '#ececec',backgroundColor: '#ececec',height: 1,borderColor : '#ececec'}}/> */}
       <div>&nbsp;&nbsp;</div>
       <div>&nbsp;&nbsp;</div>
-
+      <HomepageAnimation />
+      <HomepageFeaturesModeling />
       <HomepageCodeExamples />
       
       <HomepageFooterVideo />

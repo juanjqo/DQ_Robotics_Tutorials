@@ -57,14 +57,15 @@
   color: #000000
 }
 
-.always_gray_2 {
-  padding: 0rem 0;
+.always_gray_darker {
+  padding: 1rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background-color: #efefef;
   color: #000000
 }
+
 
 
 .python_tab_color{
