@@ -212,7 +212,7 @@ function HomepageInstallDQRobotics() {
 }
 
 function HomepageFooter() {
-  // This funciton defines the footer, which the instrucctions of installation are shown.
+  // This functon defines the footer, which the instrucctions of installation are shown.
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.features)}>
@@ -446,6 +446,7 @@ function HomepageCodeExamples() {
                         
                 />
           </div>    
+          <div>&nbsp;&nbsp;</div>
           <div className="video-responsive">    
               <video
                     muted
