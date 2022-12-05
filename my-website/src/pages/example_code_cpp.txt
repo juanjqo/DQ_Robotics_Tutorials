@@ -13,7 +13,7 @@ int main()
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     std::vector<std::string>
-    jointnames ={"Franka_joint1", "Franka_joint2",
+    jointnames = {"Franka_joint1", "Franka_joint2",
                  "Franka_joint3", "Franka_joint4",
                  "Franka_joint5", "Franka_joint6",
                  "Franka_joint7"};
@@ -35,6 +35,5 @@ int main()
         auto u = controller.compute_setpoint_control_signal(q, pd);
         vi.set_joint_target_velocities(jointnames, u);
         vi.trigger_next_simulation_step();
-
     }
 }

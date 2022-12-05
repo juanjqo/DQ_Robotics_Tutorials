@@ -5,6 +5,7 @@ from dqrobotics.robot_control import DQ_PseudoinverseController
 from dqrobotics.robots import FrankaEmikaPandaRobot
 import time
 
+
 vi = DQ_VrepInterface()
 
 try:
