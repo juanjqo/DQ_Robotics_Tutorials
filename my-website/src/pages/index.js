@@ -385,7 +385,7 @@ function HomepageAnimation() {
                     loop
                     playsInline
                     src={useBaseUrl(`img/dqrobotics_animation.mp4`)}
-                    width={"100%"}                
+                    width={"70%"}                
                 />             
           </div>
           </section>
