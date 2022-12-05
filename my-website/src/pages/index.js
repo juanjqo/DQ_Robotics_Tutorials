@@ -344,16 +344,52 @@ function HomepageFooterVideo() {
 
 
 
+function HomepageAnimation() {
+  // This function shows the videos in the main page
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    
+    <header className={clsx('hero hero--primary', styles.always_light)}>
+    
+    <div className="container">
+    
+    <section className={styles.always_light}>      
+          
+                          
+
+          {/* <div>&nbsp;&nbsp;</div> */}
+          
+          
+          <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '45px'}}>{"Dual Quaternions in DQ Robotics"}</h1>
+          <div className="video-responsive">
+              <video
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    src={useBaseUrl(`img/dqrobotics_animation.mp4`)}
+                    width={"100%"}
+                    
+                />
+                
+          </div>
+          </section>
+       </div>
+      </header>
+    
+
+  );
+}
 
 function HomepageCodeExamples() {
   // This function shows the example with CoppeliaSim using Matlab, Python and C++
   const {siteConfig} = useDocusaurusContext();
   return (
 
-    <header className={clsx('hero hero--primary', styles.always_gray)}>
+    <header className={clsx('hero hero--primary', styles.always_light)}>
     <div className="container">
 
-    <section className={styles.always_gray}>      
+    <section className={styles.always_light}>      
           <>
                           
           <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Similar style between the languages"}</h1>
@@ -385,6 +421,17 @@ function HomepageCodeExamples() {
           <div>&nbsp;&nbsp;</div>
           <div>&nbsp;&nbsp;</div>
           <div className="video-responsive">
+              <video
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    src={useBaseUrl(`img/controllerAnimation.mp4`)}
+                    width={"100%"}
+                        
+                />
+          </div>    
+          <div className="video-responsive">    
               <video
                     muted
                     autoPlay
@@ -423,19 +470,13 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-      {/*<hr  style={{
-          color: '#ececec',
-          backgroundColor: '#ececec',
-          height: 1,
-          borderColor : '#ececec'
-      }}/>*/}
+      
+      {/* <hr  style={{color: '#ececec',backgroundColor: '#ececec',height: 1,borderColor : '#ececec'}}/> */}
+      <div>&nbsp;&nbsp;</div>
+      <div>&nbsp;&nbsp;</div>
+
       <HomepageCodeExamples />
-     {/* <hr  style={{
-          color: '#ececec',
-          backgroundColor: '#ececec',
-          height: 2,
-          borderColor : '#ececec'
-      }}/>*/}
+      
       <HomepageFooterVideo />
       
       {/*<HomepageFooter /> */}
