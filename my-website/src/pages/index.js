@@ -427,6 +427,7 @@ function HomepageAnimation() {
     <section className={styles.always_light}>      
           {/* <div>&nbsp;&nbsp;</div> */}             
           {/* <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Dual Quaternions in DQ Robotics"}</h1> */} 
+          <div>&nbsp;&nbsp;</div>
           <div className="video-responsive">
               <video
                     muted
@@ -434,7 +435,7 @@ function HomepageAnimation() {
                     loop
                     playsInline
                     src={useBaseUrl(`img/dqrobotics_animation.mp4`)}
-                    width={"70%"}                
+                    width={"75%"}                
                 />             
           </div>
           </section>
@@ -490,7 +491,7 @@ function HomepageCodeExamples() {
                     autoPlay
                     loop
                     playsInline
-                    src={useBaseUrl(`img/controllerAnimation.mp4`)}
+                    src={useBaseUrl(`img/website1.mp4`)}
                     width={"100%"}
                         
                 />
@@ -502,7 +503,7 @@ function HomepageCodeExamples() {
                     autoPlay
                     loop
                     playsInline
-                    src={useBaseUrl(`img/residualAngle.mp4`)}
+                    src={useBaseUrl(`img/website2.mp4`)}
                     width={"100%"}
                     
                 />

@@ -5,7 +5,6 @@ from dqrobotics.robot_control import DQ_PseudoinverseController
 from dqrobotics.robots import FrankaEmikaPandaRobot
 import time
 
-
 vi = DQ_VrepInterface()
 
 try:
@@ -32,6 +31,9 @@ try:
         u = controller.compute_setpoint_control_signal(q, pd)
         vi.set_joint_target_velocities(jointnames, u)
         vi.trigger_next_simulation_step()
+
+    vi.stop_simulation()
+    vi.disconnect()
 
 except Exception as exp:
     print(exp)

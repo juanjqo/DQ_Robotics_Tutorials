@@ -19,8 +19,16 @@ export default function MyReactPage() {
              width={1000} height={500}>
 
           </iframe>
+
+          <iframe src="https://www.semanticscholar.org/paper/DQ-Robotics%3A-A-Library-for-Robot-Modeling-and-Adorno-Marinho/6fe5d5713b626139f880925188980ec95a82a631#citing-papers"
+      frameborder="0" allowfullscreen
+      width={1000} height={500}>
+
+   </iframe>
         </div>
       </section>
+
+
       </div>
       </Layout>
     

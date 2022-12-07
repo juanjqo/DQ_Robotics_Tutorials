@@ -36,4 +36,6 @@ int main()
         vi.set_joint_target_velocities(jointnames, u);
         vi.trigger_next_simulation_step();
     }
+    vi.stop_simulation();
+    vi.disconnect();
 }

@@ -2,6 +2,7 @@ clear all;
 close all;
 clc;
 
+
 include_namespace_dq;
 
 vi = DQ_VrepInterface;
@@ -33,6 +34,7 @@ while ~pseudoinverse_controller.system_reached_stable_region()
 
 end
 
-
+vi.stop_simulation();
+vi.disconnect();
 
 
