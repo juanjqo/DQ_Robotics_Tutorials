@@ -79,6 +79,7 @@ function HomepageHeader() {
       <div className="container">
 
       <section className={styles.always_dark}>     
+
                        <>                    
                        {/*<h1 className="hero__title" style= {{color:'#ff0048'}}>{siteConfig.title}</h1>*/}
                        <Container>
@@ -95,7 +96,17 @@ function HomepageHeader() {
                       </Col>
                       <Col >
                         <div className="container">
-                         <img  width="450" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>
+                          {/*<img  width="450" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>*/}
+                           <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
+                           <p style= {{color:'#ffffff'}}>{}
+                          If you use DQ Robotics in your research, please cite the
+                          <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a>  
+                          You can also look at the 
+                          <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#ff6fa1', fontWeight:'bold' }}> ArXiv version. </a> </p>
+                          
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <CodeBlock language="css">{MyComponentSource}</CodeBlock>
+                          </div>
                         </div>
 
                       </Col>
@@ -103,13 +114,51 @@ function HomepageHeader() {
                       </Container>
 
 
-                        </>
-
+                        </>  
       
-      
-    </section>
-    
+       </section>
+      </div>
+    </header>
+  );
+}
 
+
+function HomepageHeaderFeatures() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.always_gray)}>
+      <div className="container">
+        <section className={styles.always_gray}>     
+          <div>&nbsp;&nbsp;</div>                
+                       <Container>
+                       <Row  className="justify-content-md-center">
+                       <Col  >
+                        <div className="container">
+                        
+                          <p className="hero__subtitle" style= {{fontWeight:'bold', color:'#000000',  fontSize: '30px'}}>{'What is DQ Robotics?'}</p> 
+                          <div>&nbsp;&nbsp;</div>
+                          <div>&nbsp;&nbsp;</div>
+                          <p style= {{color:'#000000', textAlign: 'center', fontSize: '20px'}}>{
+                          
+                          "DQ Robotics is a standalone open-source (LGPLv3) library for robot modelling and control. " +
+                          "It provides dual quaternion algebra and kinematic calculation algorithms."
+                          }</p> 
+                           
+                          
+
+                         </div>
+
+                      </Col>
+                      <Col >
+                        <div className="container">
+                        <img alt=""  height="200" src={useBaseUrl('img/computer_intro.png')} />  
+                        </div>
+
+                      </Col>
+                      </Row>
+                      </Container>
+          <div>&nbsp;&nbsp;</div>
+       </section>
       </div>
     </header>
   );
@@ -377,7 +426,7 @@ function HomepageAnimation() {
     
     <section className={styles.always_light}>      
           {/* <div>&nbsp;&nbsp;</div> */}             
-          <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Dual Quaternions in DQ Robotics"}</h1>
+          {/* <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Dual Quaternions in DQ Robotics"}</h1> */} 
           <div className="video-responsive">
               <video
                     muted
@@ -401,10 +450,10 @@ function HomepageCodeExamples() {
   const {siteConfig} = useDocusaurusContext();
   return (
 
-    <header className={clsx('hero hero--primary', styles.always_light)}>
+    <header className={clsx('hero hero--primary', styles.always_gray)}>
     <div className="container">
 
-    <section className={styles.always_light}>      
+    <section className={styles.always_gray}>      
           <>
                           
           <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}>{"Similar style between the languages"}</h1>
@@ -446,7 +495,7 @@ function HomepageCodeExamples() {
                         
                 />
           </div>    
-          <div>&nbsp;&nbsp;</div>
+          
           <div className="video-responsive">    
               <video
                     muted
@@ -483,19 +532,23 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <HomepageInstallDQRobotics/>
+
+      <HomepageHeaderFeatures/>
+      {/*
       <main>
         <HomepageFeatures />
       </main>
+      */}
+
+
       
       {/* <hr  style={{color: '#ececec',backgroundColor: '#ececec',height: 1,borderColor : '#ececec'}}/> */}
-      <div>&nbsp;&nbsp;</div>
-      <div>&nbsp;&nbsp;</div>
+
       <HomepageAnimation />
-      <HomepageFeaturesModeling />
+      {/* <HomepageFeaturesModeling /> */}
       <HomepageCodeExamples />
       
       <HomepageFooterVideo />
-      
       {/*<HomepageFooter /> */}
     </Layout>
   );

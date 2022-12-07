@@ -38,8 +38,8 @@ const FeatureList = [
         are available for Windows and MacOS (Intel & Apple Silicon) as well.
       </>
     ),
-  },
-  {
+  }, 
+  { 
     title: 'Available in Matlab',
     Svg: require('@site/static/img/computer_matlab.svg').default,
     description: (
@@ -68,7 +68,7 @@ const FeatureList = [
         and if you are not afraid of pointers.
       </>
     ),
-  },
+  }, 
 
 ];
 
