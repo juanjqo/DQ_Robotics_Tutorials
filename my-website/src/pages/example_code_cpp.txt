@@ -18,10 +18,9 @@ int main()
                  "Franka_joint5", "Franka_joint6",
                  "Franka_joint7"};
 
-    auto robot = FrankaEmikaPandaRobot::kinematics();
-    DQ_PseudoinverseController controller
-    (std::static_pointer_cast<DQ_Kinematics>
-    (std::make_shared<DQ_SerialManipulatorMDH>(robot)));
+    auto robot = std::make_shared<DQ_SerialManipulatorMDH>
+    (FrankaEmikaPandaRobot::kinematics());
+    DQ_PseudoinverseController controller(robot);
 
     controller.set_gain(0.5);
     controller.set_damping(0.01);
