@@ -174,12 +174,14 @@ function HomepageHeader() {
                       <Col >
                         <div className="container">
                         <div className={styles.buttons_2}>
-                                                <Link
-                                                  className="button button--secondary button--lg"
-                                                  to="/docs/intro">
-                                                  Learn More
-                                                </Link>
-                                </div>
+                                      <Link
+                                        
+                                        to="/docs/intro">
+                                          <p style= {{color:'#ffffff', textAlign: 'center', fontSize: '18px'}}>{"Learn More"}
+                                          </p> 
+                                        
+                                      </Link>
+                          </div>
 
                         </div>
 
