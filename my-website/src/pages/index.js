@@ -90,24 +90,52 @@ function HomepageHeader() {
                          </>
                          {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
                          <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
+                         
+                          {/*![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dqrobotics)*/}
+
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/l/dqrobotics?color=blue')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/dm/dqrobotics')}/>
+                          </div> 
+                               
+                         
+                         <div style={{textAlign: 'left', fontSize: '11px'}}>
+                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
+                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/experimental-Windows-blue')} />
+                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/macOS-yellow')} />
+                         </div> 
+
+                          <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{""}
+                          </h1>                       
+
+                          <div style={{textAlign: 'left', fontSize: '18px'}}>
+                          <CodeBlock language="shell">{install_shell_python}</CodeBlock>
+                          </div>
+                         
+                        
+                        
+                        
                                
                         
 
                       </Col>
+                      </Row>
+                      <Row  className="justify-content-md-center">
                       <Col >
                         <div className="container">
-                          {/*<img  width="450" src="https://user-images.githubusercontent.com/23158313/149566906-46c490dd-1e2f-4310-89c4-4a4c1abe3158.gif?raw=true"/>*/}
-                           <h1 style= {{color:'#ffffff', textAlign: 'left', fontSize: '20px'}}>{"How to cite"}</h1> 
-                           <p style= {{color:'#ffffff'}}>{}
-                          If you use DQ Robotics in your research, please cite the
-                          <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#ff6fa1', fontWeight:'bold' }}> DQ Robotics introductory paper (IEEE Robotics and Automation Magazine). </a>  
-                          You can also look at the 
-                          <a href="https://arxiv.org/abs/1910.11612" style= {{color:'#ff6fa1', fontWeight:'bold' }}> ArXiv version. </a> </p>
-                          
-                          <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <CodeBlock language="css">{MyComponentSource}</CodeBlock>
-                          </div>
+                        <div className={styles.buttons_2}>
+                                                <Link
+                                                  className="button button--secondary button--lg"
+                                                  to="/docs/intro">
+                                                  Learn More
+                                                </Link>
+                                </div>
+
                         </div>
+
+
+
 
                       </Col>
                       </Row>

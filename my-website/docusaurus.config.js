@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'DQ Robotics',
-  tagline: 'The dual quaternion robotics library',
+  tagline: 'The dual quaternion robotics library for Python/C++ and Matlab.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
