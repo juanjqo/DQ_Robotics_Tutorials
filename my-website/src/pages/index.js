@@ -173,12 +173,14 @@ function HomepageHeader() {
                       <Row  className="justify-content-md-center">
                       <Col >
                         <div className="container">
-                        <div className={styles.buttons_2}>
+                        <div className={styles.buttons}>
                                       <Link
                                         
+                                     
+                                        className="button button--secondary button--lg"
                                         to="/docs/intro">
-                                          <p style= {{color:'#ffffff', textAlign: 'center', fontSize: '18px'}}>{"Learn More"}
-                                          </p> 
+                                        Learn more
+                                      
                                         
                                       </Link>
                           </div>
@@ -205,9 +207,9 @@ function HomepageHeader() {
 function HomepageHeaderFeatures() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.always_gray)}>
+    <header className={clsx('hero hero--primary', styles.always_light)}>
       <div className="container">
-        <section className={styles.always_gray}>     
+        <section className={styles.always_light}>     
           <div>&nbsp;&nbsp;</div>                
                        <Container>
                        <Row  className="justify-content-md-center">
@@ -614,6 +616,7 @@ export default function Home() {
 
 
       <HomepageHeaderFeatures/>
+      <HomepageCodeExamples />
       {/*
       <main>
         <HomepageFeatures />
@@ -624,9 +627,9 @@ export default function Home() {
       
       {/* <hr  style={{color: '#ececec',backgroundColor: '#ececec',height: 1,borderColor : '#ececec'}}/> */}
 
-      <HomepageAnimation />
+      {/*  <HomepageAnimation /> */}
       {/* <HomepageFeaturesModeling /> */}
-      <HomepageCodeExamples />
+      
       {/* <HomepageInstallDQRobotics/> . */}
       <HomepageFooterVideo />
       {/*<HomepageFooter /> */}
