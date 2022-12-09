@@ -85,42 +85,91 @@ function HomepageHeader() {
                        <Container>
                       <Row  className="justify-content-md-center">
                       <Col  >
+                      <div style={{textAlign: 'center', fontSize: '11px'}}>
+                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/l/dqrobotics?color=blue')} />
+                              
+                              
+                            </div> 
                          <>
-                         <img alt=""  width="562" height="215" src={useBaseUrl('img/dqrobotics_logo_header.svg')} />
+                         <img alt=""  width="562" height="215" src={useBaseUrl('img/dqrobotics_logo_header.svg')} /> 
+                         
                          </>
+                         <div>&nbsp;&nbsp;</div>
+                         {/* width="562" height="215" */}
                          {/*<img alt="" width="562" height="315" src={useBaseUrl('img/header_page.svg')} />*/}
                          <p className="hero__subtitle" style= {{color:'#61dafb'}}>{siteConfig.tagline}</p> 
-                         
+
+                         <div>&nbsp;&nbsp;</div>
+                         <div>&nbsp;&nbsp;</div>
                           {/*![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dqrobotics)*/}
 
+                  
+                      </Col>
+                      
+
+                      </Row>
+                      <Row  className="justify-content-md-center">
+                      <Col >
+                            <div style={{textAlign: 'left', fontSize: '11px'}}>
+                              
+                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics')} />
+                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/dm/dqrobotics')}/>
+                            </div> 
+                                
+                          
                           <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/l/dqrobotics?color=blue')} />
-                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics')} />
-                            <img alt="" src={useBaseUrl('https://img.shields.io/pypi/dm/dqrobotics')}/>
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/experimental-Windows-blue')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/macOS-yellow')} />
                           </div> 
-                               
-                         
-                         <div style={{textAlign: 'left', fontSize: '11px'}}>
-                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
-                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/experimental-Windows-blue')} />
-                          <img alt="" src={useBaseUrl('https://img.shields.io/badge/macOS-yellow')} />
-                         </div> 
 
-                          <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{""}
-                          </h1>                       
+                            <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{""}
+                            </h1>                       
 
-                          <div style={{textAlign: 'left', fontSize: '18px'}}>
-                          <CodeBlock language="shell">{install_shell_python}</CodeBlock>
-                          </div>
-                         
-                        
-                        
-                        
-                               
-                        
+                            <div style={{textAlign: 'left', fontSize: '14px'}}>
+                            <CodeBlock language="shell">{install_shell_python}</CodeBlock>
+                            </div>
 
                       </Col>
+                      <Col >
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/C%2B%2B-11-red')} />
+                            </div> 
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
+                            
+                          </div> 
+                            <div style={{textAlign: 'left', fontSize: '14px'}}>
+                                  <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
+                            </div>
+                      </Col>
+                      
+
                       </Row>
+
+
+                      <Row  className="justify-content-md-center">
+                      <Col >
+                         <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-Matlab-blue')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/github/downloads/dqrobotics/matlab/total')} />
+                          </div> 
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                          <a href="https://github.com/dqrobotics/matlab/releases" 
+                            style= {{color:'#50fa7b', fontWeight:'bold'}}> 
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-click%20here-red')} />
+                            </a>
+                            
+                          </div>
+
+                          
+                      
+
+                      </Col>
+
+                      </Row>
+
+
                       <Row  className="justify-content-md-center">
                       <Col >
                         <div className="container">
@@ -560,7 +609,7 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <HomepageInstallDQRobotics/>
+
 
       <HomepageHeaderFeatures/>
       {/*
@@ -576,7 +625,7 @@ export default function Home() {
       <HomepageAnimation />
       {/* <HomepageFeaturesModeling /> */}
       <HomepageCodeExamples />
-      
+      {/* <HomepageInstallDQRobotics/> . */}
       <HomepageFooterVideo />
       {/*<HomepageFooter /> */}
     </Layout>

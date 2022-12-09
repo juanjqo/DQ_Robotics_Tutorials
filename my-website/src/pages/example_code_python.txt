@@ -38,4 +38,3 @@ try:
 except Exception as exp:
     print(exp)
     vi.disconnect_all()
-    
