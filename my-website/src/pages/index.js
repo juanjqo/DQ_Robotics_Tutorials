@@ -143,12 +143,6 @@ function HomepageHeader() {
                                   <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
                             </div>
                       </Col>
-                      
-
-                      </Row>
-
-
-                      <Row  className="justify-content-md-center">
                       <Col >
                          <div style={{textAlign: 'left', fontSize: '11px'}}>
                             <img alt="" src={useBaseUrl('https://img.shields.io/badge/-Matlab-blue')} />
@@ -157,7 +151,7 @@ function HomepageHeader() {
                           <div style={{textAlign: 'left', fontSize: '11px'}}>
                           <a href="https://github.com/dqrobotics/matlab/releases" 
                             style= {{color:'#50fa7b', fontWeight:'bold'}}> 
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-click%20here-red')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-click%20here-red')} width="100"/>
                             </a>
                             
                           </div>
@@ -168,6 +162,8 @@ function HomepageHeader() {
                       </Col>
 
                       </Row>
+
+
 
 
                       <Row  className="justify-content-md-center">
@@ -615,7 +611,7 @@ export default function Home() {
       <HomepageHeader />
 
 
-      <HomepageHeaderFeatures/>
+      {/* <HomepageHeaderFeatures/> */}
       <HomepageCodeExamples />
       {/*
       <main>
