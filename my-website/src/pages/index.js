@@ -85,9 +85,12 @@ function HomepageHeader() {
                        <Container>
                       <Row  className="justify-content-md-center">
                       <Col  >
-                      <div style={{textAlign: 'center', fontSize: '11px'}}>
-                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/l/dqrobotics?color=blue')} />
-                              
+                           <div style={{textAlign: 'center', fontSize: '11px'}}>
+                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/l/dqrobotics?color=blue')} />                           
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/experimental-Windows-blue')} />
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/macOS-yellow')} />
+                          
                               
                             </div> 
                          <>
@@ -112,54 +115,45 @@ function HomepageHeader() {
                       <Col >
                             <div style={{textAlign: 'left', fontSize: '11px'}}>
                               
-                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics')} />
+                              {/* <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics')} /> */}
+                              <img alt="" src={useBaseUrl('https://img.shields.io/pypi/pyversions/dqrobotics/21.4.0a75')} />
                               <img alt="" src={useBaseUrl('https://img.shields.io/pypi/dm/dqrobotics')}/>
                             </div> 
                                 
-                          
-                          <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/experimental-Windows-blue')} />
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/macOS-yellow')} />
-                          </div> 
-
-                            <h1 style= {{color:'#61dafb', textAlign: 'left', fontSize: '18px'}}>{""}
-                            </h1>                       
 
                             <div style={{textAlign: 'left', fontSize: '14px'}}>
                             <CodeBlock language="shell">{install_shell_python}</CodeBlock>
                             </div>
 
+
+                            <div style={{textAlign: 'left', fontSize: '11px'}}>
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/matlab-toolbox-blue')} />
+                            <img alt="" src={useBaseUrl('https://img.shields.io/github/downloads/dqrobotics/matlab/total')} />
+                          </div> 
+                          
+                          <div style={{textAlign: 'left', fontSize: '11px'}}>
+                          <a href="https://github.com/dqrobotics/matlab/releases" 
+                            style= {{color:'#50fa7b', fontWeight:'bold'}}> 
+                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-Click%20here-282a36')} width="100"/>
+                            </a>
+                            
+                          </div>
+
                       </Col>
                       <Col >
                           <div style={{textAlign: 'left', fontSize: '11px'}}>
-                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/C%2B%2B-11-red')} />
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/C%2B%2B-11-blue')} />
+                              <img alt="" src={useBaseUrl('https://img.shields.io/badge/Ubuntu LTS-orange')} />
                             </div> 
                           <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/official%20support-Ubuntu LTS-orange')} />
+                            
                             
                           </div> 
                             <div style={{textAlign: 'left', fontSize: '14px'}}>
                                   <CodeBlock language="shell">{install_shell_cpp}</CodeBlock>
                             </div>
                       </Col>
-                      <Col >
-                         <div style={{textAlign: 'left', fontSize: '11px'}}>
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-Matlab-blue')} />
-                            <img alt="" src={useBaseUrl('https://img.shields.io/github/downloads/dqrobotics/matlab/total')} />
-                          </div> 
-                          <div style={{textAlign: 'left', fontSize: '11px'}}>
-                          <a href="https://github.com/dqrobotics/matlab/releases" 
-                            style= {{color:'#50fa7b', fontWeight:'bold'}}> 
-                            <img alt="" src={useBaseUrl('https://img.shields.io/badge/-click%20here-red')} width="100"/>
-                            </a>
-                            
-                          </div>
 
-                          
-                      
-
-                      </Col>
 
                       </Row>
 
