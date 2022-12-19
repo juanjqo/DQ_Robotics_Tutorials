@@ -94,7 +94,7 @@ function HomepageHeader() {
                               
                             </div> 
                          <>
-                         <img alt=""  width="562" height="215" src={useBaseUrl('img/dqrobotics_logo_header.svg')} /> 
+                         <img alt=""  width="562" height="215" src={useBaseUrl('img/dqrobotics_logo_infinity.svg')} /> 
                          
                          </>
                          <div>&nbsp;&nbsp;</div>
