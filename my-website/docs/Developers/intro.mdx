@@ -1,0 +1,68 @@
+---
+sidebar_position: 1
+---
+
+# Get Started
+
+## Building DQ Robotics from sources
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Install prerequisites
+
+<Tabs className="unique-tabs">
+
+<TabItem value="py" label="Ubuntu (AMD64/ARM64)">
+
+<div>&nbsp;&nbsp;</div>
+
+<img src="/img/computer_python.svg" alt="drawing" width="300"/>
+
+<div>&nbsp;&nbsp;</div>
+
+```shell
+sudo apt install build-essential git cmake g++ libeigen3-dev fakeroot
+```
+
+
+</TabItem>
+<TabItem value="cpp" label="MacOS (Apple Silicon)">
+
+<div>&nbsp;&nbsp;</div>
+
+<img src="/img/computer_cpp.svg" alt="drawing" width="300"/>
+
+<div>&nbsp;&nbsp;</div>
+
+
+```shell
+brew install eigen
+```
+
+
+</TabItem>
+
+<TabItem value="matlab" label="Windows (AMD64)">
+
+<div>&nbsp;&nbsp;</div>
+
+<img src="/img/computer_matlab.svg" alt="drawing" width="300"/>
+
+<div>&nbsp;&nbsp;</div>    
+
+
+```shell
+echo "Setting up vcpkg..."
+cd C:\vcpkg
+.\bootstrap-vcpkg.bat
+vcpkg integrate install
+echo "Installing eigen3..."
+.\vcpkg install eigen3:x64-windows
+echo "Adding symlink to vcpkg..."
+cmd /c mklink /d c:\Tools\vcpkg c:\vcpkg
+cd ~
+```
+
+</TabItem>
+</Tabs>
