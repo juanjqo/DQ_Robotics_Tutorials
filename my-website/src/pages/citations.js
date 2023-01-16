@@ -28,7 +28,6 @@ export default function MyReactPage() {
         </div>
       </section>
 
-
       </div>
       </Layout>
     

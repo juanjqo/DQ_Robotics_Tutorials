@@ -2,14 +2,15 @@
 sidebar_position: 1
 ---
 
-# Get Started
+# Building from sources
 
-## Building DQ Robotics from sources
+## DQ Robotics (C++)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Install prerequisites
+
+
 
 <Tabs className="unique-tabs">
 
@@ -21,10 +22,39 @@ import TabItem from '@theme/TabItem';
 
 <div>&nbsp;&nbsp;</div>
 
+### Install pre-requisites
+
 ```shell
 sudo apt install build-essential git cmake g++ libeigen3-dev fakeroot
 ```
+### Clone the repository
 
+```shell
+git clone https://github.com/dqrobotics/cpp.git
+```
+
+### Build and install
+
+```shell
+cd cpp
+mkdir build && cd build
+chmod +x debian/rules
+fakeroot debian/rules clean
+fakeroot debian/rules build
+fakeroot debian/rules binary
+```
+
+```shell
+cd ..
+sudo dpkg -i .libdqrobotics*.deb
+```
+
+### Uninstall
+
+```shell
+cd cpp/build
+sudo xargs rm < install_manifest.txt
+```
 
 </TabItem>
 <TabItem value="cpp" label="MacOS (Apple Silicon)">
@@ -35,11 +65,34 @@ sudo apt install build-essential git cmake g++ libeigen3-dev fakeroot
 
 <div>&nbsp;&nbsp;</div>
 
+### Install pre-requisites
 
 ```shell
 brew install eigen
 ```
 
+### Build and install
+
+```shell
+cd cpp
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+```
+
+### Clone the repository
+
+```shell
+git clone https://github.com/dqrobotics/cpp.git
+```
+
+### Uninstall
+
+```shell
+cd cpp/build
+sudo xargs rm < install_manifest.txt
+```
 
 </TabItem>
 
@@ -51,6 +104,7 @@ brew install eigen
 
 <div>&nbsp;&nbsp;</div>    
 
+### Install pre-requisites
 
 ```shell
 echo "Setting up vcpkg..."
