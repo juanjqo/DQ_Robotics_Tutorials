@@ -7,6 +7,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
+const myComponent = {
+  height: '800px',
+  overflowX: 'hidden',
+  overflowY: 'scroll'
+};
+
 export default function App() {
   const [data, setData] = useState({});
 
@@ -25,7 +32,8 @@ export default function App() {
     
     <Layout> 
       <div className="container">
-         <section className={styles.always_light}> 
+
+            <section className={styles.always_light}> 
             <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '20px'}}>
             <a href="https://ieeexplore.ieee.org/document/9136790" style= {{color:'#1777bc', fontWeight:'bold', textAlign: 'center', fontSize: '35px'}}>{data.title}</a>
             
@@ -44,46 +52,69 @@ export default function App() {
 
             <hr />
             
-            { data.citations?.map((value, index) => {
-                return (
-                  <div key={index}>
-                    <section className={ index%2 ? styles.always_gray : styles.always_light}>  
-                    <Container>
-                    <Row  className="justify-content-md-center">
-                    <Col  >
-                    <a href={value.url} style= {{color:'#1777bc', fontWeight:'bold', textAlign: 'center', fontSize: '15px'}}>{value.title}
+            <div style={{ height: '800px' }}>
+                  <div style={myComponent}>
+                      { data.citations?.map((value, index) => {
+                          return (
+
+                            <div key={index}>
+
+                              <section className={ index%2 ? styles.always_gray : styles.always_light}>  
+                              <Container>
+                              <Row  className="justify-content-md-center">
+                              <Col  >
+                              <a href={value.url} style= {{color:'#1777bc', fontWeight:'bold', textAlign: 'center', fontSize: '15px'}}>{value.title}
+                              
+                              </a>
+                              
+                              <a href={value.url}>
+                              <img alt=""  width="300" height="15" src={useBaseUrl('img/semantic_scholar.svg')} />
+                              </a>
+                              </Col>
+
+                              <Col  >
+                              <p style= {{color:'#000000', textAlign: 'center', fontSize: '15px'}}>{value.venue}</p>
+                              </Col>
+
+                              <Col  >
+                              <a href={value.url} style= {{color:'#000000', fontWeight:'bold', textAlign: 'center', fontSize: '15px'}}>{value.year}</a>
+                              </Col>
+
+
+                              
+
+                              </Row>
+                              </Container>
+                              </section>
+                              </div>
+
+
+                            
+                          );
+                        })}
+
+                  </div>  
+              </div>
                     
-                    </a>
+
+              <section className={styles.always_light}>   
+                    <h1 style= {{color:'#000000', textAlign: 'center', fontSize: '25px'}}> Conference/Journal papers that used DQ Robotics</h1>
                     
-                    <a href={value.url}>
-                    <img alt=""  width="300" height="15" src={useBaseUrl('img/semantic_scholar.svg')} />
-                    </a>
-                    </Col>
+                      <div >
+                        <iframe src="https://bibbase.org/show?bib=dqrobotics.github.io%2Fimages%2Fdqrobotics.bib" frameborder="0" allowfullscreen
+                          width={1000} height={500}>
 
-                    <Col  >
-                    <p style= {{color:'#000000', textAlign: 'center', fontSize: '15px'}}>{value.venue}</p>
-                    </Col>
+                        </iframe>
 
-                    <Col  >
-                    <a href={value.url} style= {{color:'#000000', fontWeight:'bold', textAlign: 'center', fontSize: '15px'}}>{value.year}</a>
-                    </Col>
-
-
-                    
-
-                    </Row>
-                    </Container>
-                    </section>
-                  </div>
-                  
-                );
-              })}
-  
-        <div>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div> 
+                      </div>
+               </section>
+      
+            <div>
+              <pre>{JSON.stringify(data, null, 2)}</pre>
+            </div> 
         </section>
-      </div>
+        </div>
+
     </Layout>
   );
 }
