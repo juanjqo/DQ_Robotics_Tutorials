@@ -21,9 +21,6 @@ export default function App() {
   );
 }
 
-const markdown = `Just a link: https://reactjs.com.`
-
-
 const PageComponent = () => {
   const [content, setContent] = useState("");
   
