@@ -77,7 +77,7 @@ const config = {
           },
           {
             label: 'Contributing',
-            to: '/docs/developers/Contributing',
+            to: '/docs/category/contributing',
             position: 'right'
           },
           {

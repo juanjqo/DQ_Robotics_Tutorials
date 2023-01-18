@@ -13,43 +13,12 @@ import ReactMarkdown from "react-markdown";
 import ReactDom from 'react-dom'
 import remarkGfm from 'remark-gfm'
 
+import RenderGithubMarkdown from '@site/src/components/_RenderGithubMarkdown'
+
+const url = "https://raw.githubusercontent.com/dqrobotics/matlab/master/CONTRIBUTING.md"
+
 export default function App() {
   return (
-    <div className="App">
-      <PageComponent />
-    </div>
+    RenderGithubMarkdown(url)
   );
 }
-
-const markdown = `Just a link: https://reactjs.com.`
-
-
-const PageComponent = () => {
-  const [content, setContent] = useState("");
-  
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(
-        "https://raw.githubusercontent.com/dqrobotics/matlab/master/CONTRIBUTING.md"
-      );
-      const parsed = await response.text();
-      setContent(parsed);
-      
-    })();
-  }, []);
-
-
-  return (
-
-    <Layout> 
-    <div className="container">
-      <div style={{textAlign: 'left', fontSize: '15px'}}>
-      <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}/>
-    </div>
-    </div>
-    </Layout>
-  
-  );
-};
-
-
