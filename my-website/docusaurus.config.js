@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,6 +40,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            remarkPlugins: [math],
+            rehypePlugins: [katex],
         },
         blog: {
           showReadingTime: true,
@@ -51,6 +55,8 @@ const config = {
         },
       }),
     ],
+
+
   ],
 
   themeConfig:
