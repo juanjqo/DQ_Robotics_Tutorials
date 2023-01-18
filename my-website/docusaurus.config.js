@@ -76,6 +76,11 @@ const config = {
             position: 'right',
           },
           {
+            label: 'Contributing',
+            to: '/docs/developers/Contributing',
+            position: 'right'
+          },
+          {
             label: 'Citations',
             to: '/citations',
             position: 'right'

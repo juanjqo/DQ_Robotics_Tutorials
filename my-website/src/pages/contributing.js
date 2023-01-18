@@ -38,13 +38,13 @@ const PageComponent = () => {
 
   return (
 
-    <Layout> 
+   
     <div className="container">
       <div style={{textAlign: 'left', fontSize: '15px'}}>
       <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}/>
+      </div>
     </div>
-    </div>
-    </Layout>
+    
   
   );
 };
